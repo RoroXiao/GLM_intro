@@ -104,6 +104,15 @@ h2.slide-title{
 .slide-foot .brand{font-weight:700;letter-spacing:.04em;color:#7A8699;}
 .slide-num{font-variant-numeric:tabular-nums;}
 
+/* 水印（页脚中间：生成日期 + 邮箱） */
+.slide::after{
+  content:"Generated " attr(data-wm-date) " · ruixuan.xiao@aminer.cn";
+  position:absolute;left:50%;bottom:2.2%;transform:translateX(-50%);
+  font-size:.62vw;color:#B4BCCB;font-weight:500;letter-spacing:.02em;
+  pointer-events:none;white-space:nowrap;
+}
+.slide.cover::after{color:#C9CEDA;}
+
 /* ---------- 语言切换器 ---------- */
 #langbar{
   position:fixed;top:1.2vw;right:1.4vw;z-index:999;
@@ -120,6 +129,10 @@ h2.slide-title{
 }
 #langbar button.on{background:var(--brand);color:#fff;}
 #langbar button:not(.on):hover{color:var(--ink);}
+#langbar button.print-btn{
+  background:linear-gradient(135deg,var(--brand),#4A6CF7);color:#fff;margin-left:.35vw;
+}
+#langbar button.print-btn:hover{filter:brightness(1.08);}
 
 /* ---------- 封面 ---------- */
 .cover{
@@ -527,14 +540,15 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
   html,body{height:auto!important;overflow:visible!important;scroll-snap-type:none!important;background:#fff;}
   #langbar,#nav-dots,#nav-arrows{display:none!important;}
   .slide{
-    width:297mm;height:167.0625mm;
+    width:277mm;height:155.93mm;   /* 297:167.0625 等比缩至 A4 横向可打印区 */
+    margin:10.5mm auto 10.57mm;
     page-break-after:always;break-after:page;
     scroll-snap-align:none;border-top:0!important;
   }
   .slide:last-child{page-break-after:auto;break-after:auto;}
   *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;}
 }
-@page{size:297mm 167.0625mm;margin:0;}
+@page{size:A4 landscape;margin:0;}
 
 /* ---------- 屏幕导航点 ---------- */
 #nav-dots{
@@ -566,6 +580,7 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
   <button id="btn-zh" class="on" onclick="setLang('zh')">简体中文</button>
   <button id="btn-tc" onclick="setLang('tc')">繁體中文</button>
   <button id="btn-en" onclick="setLang('en')">English</button>
+  <button id="btn-print" class="print-btn" onclick="window.print()">🖨 PDF</button>
 </nav>
 <div id="nav-dots"></div>
 <div id="nav-arrows">
@@ -574,7 +589,7 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
 </div>
 
 <!-- ============ 01 封面 ============ -->
-<section class="slide cover" id="slide-1">
+<section class="slide cover" id="slide-1" data-wm-date="2026-08-31">
   <div class="cover-grid">
     <div>
       <div class="cover-badge"><span class="dot"></span>
@@ -633,7 +648,7 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
 </section>
 
 <!-- ============ 02 公司简介 ============ -->
-<section class="slide" id="slide-2">
+<section class="slide" id="slide-2" data-wm-date="2026-08-31">
   <div class="kicker">
     <span data-c>关于智谱</span><span data-t>關於智譜</span><span data-e>About Zhipu AI</span>
   </div>
@@ -686,7 +701,7 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
 </section>
 
 <!-- ============ 03 模型矩阵 ============ -->
-<section class="slide" id="slide-3">
+<section class="slide" id="slide-3" data-wm-date="2026-08-31">
   <div class="kicker">
     <span data-c>模型矩阵</span><span data-t>模型矩陣</span><span data-e>Model Lineup</span>
   </div>
@@ -789,7 +804,7 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
 </section>
 
 <!-- ============ 04 旗舰亮点 GLM-5.3 ============ -->
-<section class="slide" id="slide-4">
+<section class="slide" id="slide-4" data-wm-date="2026-08-31">
   <div class="kicker">
     <span data-c>旗舰聚焦</span><span data-t>旗艦聚焦</span><span data-e>Flagship Focus</span>
   </div>
@@ -833,7 +848,7 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
 </section>
 
 <!-- ============ 05 行业基准（移入） ============ -->
-<section class="slide" id="slide-5">
+<section class="slide" id="slide-5" data-wm-date="2026-08-31">
   <div class="kicker">
     <span data-c>行业基准</span><span data-t>行業基準</span><span data-e>Benchmarks</span>
   </div>
@@ -854,7 +869,7 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
 </section>
 
 <!-- ============ 06 API 定价 ============ -->
-<section class="slide" id="slide-6">
+<section class="slide" id="slide-6" data-wm-date="2026-08-31">
   <div class="kicker">
     <span data-c>API 定价</span><span data-t>API 定價</span><span data-e>API Pricing</span>
   </div>
@@ -946,7 +961,7 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
 </section>
 
 <!-- ============ 07 性价比图 ============ -->
-<section class="slide" id="slide-7">
+<section class="slide" id="slide-7" data-wm-date="2026-08-31">
   <div class="kicker">
     <span data-c>性价比</span><span data-t>性價比</span><span data-e>Value</span>
   </div>
@@ -967,7 +982,7 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
 </section>
 
 <!-- ============ 07 Coding Plan 合并页 ============ -->
-<section class="slide" id="slide-8">
+<section class="slide" id="slide-8" data-wm-date="2026-08-31">
   <div class="kicker">
     <span data-c>团队版 Coding Plan</span><span data-t>團隊版 Coding Plan</span><span data-e>Team Coding Plan</span>
   </div>
@@ -1056,7 +1071,7 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
 </section>
 
 <!-- ============ 11 为什么官方 API ============ -->
-<section class="slide" id="slide-9">
+<section class="slide" id="slide-9" data-wm-date="2026-08-31">
   <div class="kicker">
     <span data-c>官方 API 价值</span><span data-t>官方 API 價值</span><span data-e>Why Official API</span>
   </div>
@@ -1120,7 +1135,7 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
 </section>
 
 <!-- ============ 11 PART 02 分隔页 ============ -->
-<section class="slide cover" id="slide-10" style="justify-content:center">
+<section class="slide cover" id="slide-10" style="justify-content:center" data-wm-date="2026-08-31">
   <div class="cover-grid" style="grid-template-columns:1fr 1.35fr;align-items:center;">
     <div>
       <div class="cover-badge"><span class="dot"></span>
@@ -1159,7 +1174,7 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
 </section>
 
 <!-- ============ 12 ZCode 产品 ============ -->
-<section class="slide" id="slide-11">
+<section class="slide" id="slide-11" data-wm-date="2026-08-31">
   <div class="kicker">
     <span data-c>ZCode Enterprise</span><span data-t>ZCode Enterprise</span><span data-e>ZCode Enterprise</span>
   </div>
@@ -1224,7 +1239,7 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
 </section>
 
 <!-- ============ 13 ZCode 治理与交付 ============ -->
-<section class="slide" id="slide-12">
+<section class="slide" id="slide-12" data-wm-date="2026-08-31">
   <div class="kicker">
     <span data-c>ZCode Enterprise</span><span data-t>ZCode Enterprise</span><span data-e>ZCode Enterprise</span>
   </div>
@@ -1277,7 +1292,7 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
 </section>
 
 <!-- ============ 14 万卷平台 ============ -->
-<section class="slide" id="slide-13">
+<section class="slide" id="slide-13" data-wm-date="2026-08-31">
   <div class="kicker">
     <span data-c>万卷 · 数字员工平台</span><span data-t>萬卷 · 數字員工平台</span><span data-e>Wanjuan · Digital Employees</span>
   </div>
@@ -1323,7 +1338,7 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
 </section>
 
 <!-- ============ 15 万卷场景与价值 ============ -->
-<section class="slide" id="slide-14">
+<section class="slide" id="slide-14" data-wm-date="2026-08-31">
   <div class="kicker">
     <span data-c>万卷 · 数字员工平台</span><span data-t>萬卷 · 數字員工平台</span><span data-e>Wanjuan · Digital Employees</span>
   </div>
@@ -1372,7 +1387,7 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
 </section>
 
 <!-- ============ 13 结尾联系 ============ -->
-<section class="slide end" id="slide-15">
+<section class="slide end" id="slide-15" data-wm-date="2026-08-31">
   <div class="end-grid">
     <div>
       <div class="kicker">
@@ -1395,7 +1410,6 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
         <div class="rl" data-c>智谱 AI · 专项销售（大湾区）</div>
         <div class="rl" data-t>智譜 AI · 專項銷售（大灣區）</div>
         <div class="rl" data-e>Zhipu AI · Dedicated Sales (Greater Bay Area)</div>
-        <a class="ln" href="tel:+8613162582070">📱 +86 131 6258 2070</a>
         <a class="ln" href="mailto:ruixuan.xiao@aminer.cn?subject=GLM%20Enterprise%20Inquiry">✉️ ruixuan.xiao@aminer.cn</a>
       </div>
       <div class="qr-box">
