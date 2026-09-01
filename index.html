@@ -183,7 +183,7 @@ h2.slide-title{
 .toc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2vw;flex:1;align-content:center;}
 .toc-card{
   background:var(--panel);border:1px solid var(--line);border-radius:1vw;
-  padding:1.6vw 1.5vw;display:flex;flex-direction:column;gap:.5vw;
+  padding:1.4vw 1.5vw;display:flex;flex-direction:column;gap:.4vw;
   border-top:.32vw solid var(--brand);
 }
 .toc-card:nth-child(2),.toc-card:nth-child(5){border-top-color:var(--accent);}
@@ -281,6 +281,8 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
 #slide-5 table.dt td,#slide-6 table.dt td{padding:.5vw .9vw;}
 #slide-5 .price-note,#slide-6 .price-note{margin-top:.4vw;}
 #slide-5 .official-links,#slide-6 .official-links{margin-top:.4vw;padding-top:.4vw;}
+#slide-6 .flash-grid .flash-img{padding:.5vw;}
+#slide-4e .scene-grid{grid-template-rows:repeat(2,minmax(0,1fr));}
 
 /* ---------- CP 套餐卡 ---------- */
 .plan-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.4vw;flex:1;align-content:start;}
@@ -464,6 +466,77 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
 }
 .cp-rule b{color:var(--ink);}
 
+/* ---------- GLM-5.3-Flash 产品页 ---------- */
+.flash-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2vw;flex:1;min-height:0;align-content:start;}
+.flash-img{
+  background:#fff;border:1px solid var(--line);border-radius:1vw;
+  padding:.7vw;display:flex;align-items:center;justify-content:center;
+  overflow:hidden;min-height:0;box-shadow:0 .12vw .5vw rgba(16,24,40,.05);
+}
+.flash-img img{max-width:100%;max-height:100%;object-fit:contain;}
+.flash-img.tall{flex-direction:column;}
+.flash-stack{display:flex;flex-direction:column;gap:1vw;min-height:0;}
+.flash-note{font-size:.78vw;color:var(--muted);margin-top:.5vw;line-height:1.5;}
+
+/* ---------- 个人版 · 五大核心用法卡片 ---------- */
+.use-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.55vw .6vw;align-content:start;}
+.use-grid .use-card:last-child{grid-column:1 / -1;}
+.use-card{
+  background:linear-gradient(165deg,rgba(30,79,216,.05),rgba(15,164,127,.06));
+  border:1px solid rgba(30,79,216,.16);border-left:.24vw solid var(--brand);
+  border-radius:.7vw;padding:.62vw .8vw;
+  display:flex;flex-direction:column;gap:.18vw;min-width:0;
+}
+.use-card:nth-child(2n){border-left-color:var(--accent);}
+.use-card:last-child{border-left-color:var(--gold);}
+.use-card .uc-ic{
+  font-family:var(--f-mono);font-size:.8vw;font-weight:800;color:var(--brand);
+  background:rgba(30,79,216,.09);width:1.5vw;height:1.5vw;border-radius:.45vw;
+  display:flex;align-items:center;justify-content:center;margin-bottom:.12vw;
+}
+.use-card:nth-child(2n) .uc-ic{color:var(--accent);background:rgba(15,164,127,.11);}
+.use-card:last-child .uc-ic{color:var(--gold);background:rgba(183,121,31,.12);}
+.use-card .uc-t{font-size:.92vw;font-weight:800;color:var(--ink);}
+.use-card .uc-d{font-size:.74vw;color:var(--ink-2);line-height:1.45;}
+
+/* ---------- 帕累托页 · 思路与做法引述框 ---------- */
+.think-box{
+  background:linear-gradient(150deg,rgba(30,79,216,.06),rgba(15,164,127,.05));
+  border:1px solid rgba(30,79,216,.18);border-left:.28vw solid var(--brand);
+  border-radius:.8vw;padding:.8vw 1vw;
+  display:flex;flex-direction:column;gap:.5vw;
+}
+.think-box .tb-k{
+  font-size:.72vw;font-weight:800;letter-spacing:.14em;color:var(--brand);
+  display:flex;align-items:center;gap:.45vw;
+}
+.think-box .tb-k::before{content:'■';font-size:.6vw;}
+.think-box:nth-of-type(2) .tb-k, .think-box.gold{--tb-c:var(--gold);}
+.think-item{display:flex;gap:.55vw;align-items:flex-start;}
+.think-item .ti-ic{
+  flex:none;width:1.25vw;height:1.25vw;border-radius:.35vw;margin-top:.05vw;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--f-mono);font-size:.62vw;font-weight:800;
+  background:rgba(30,79,216,.09);color:var(--brand);
+}
+.think-item.g .ti-ic{background:rgba(15,164,127,.11);color:var(--accent);}
+.think-item.gd .ti-ic{background:rgba(183,121,31,.12);color:var(--gold);}
+.think-item .ti-tx{font-size:.78vw;color:var(--ink-2);line-height:1.5;min-width:0;}
+.think-item .ti-tx b{color:var(--ink);}
+.scene-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,minmax(0,1fr));gap:1vw;flex:1;min-height:0;align-content:stretch;}
+.scene-shot{
+  border:1px solid var(--line);border-radius:.8vw;overflow:hidden;background:#fff;
+  display:flex;flex-direction:column;min-height:0;box-shadow:0 .12vw .5vw rgba(16,24,40,.05);
+}
+.scene-shot .sc{flex:none;display:flex;align-items:center;gap:.45vw;
+  font-size:.78vw;font-weight:700;color:var(--ink);padding:.5vw .8vw;
+  background:var(--panel);border-bottom:1px solid var(--line);}
+.scene-shot .sc::before{content:'';width:.45vw;height:.45vw;border-radius:50%;background:var(--brand);}
+.scene-shot .sd{flex:none;font-size:.72vw;color:var(--muted);padding:.35vw .8vw .45vw;line-height:1.45;}
+.scene-shot .img{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#0E1526;}
+.scene-shot .img img{width:100%;height:100%;object-fit:cover;}
+.scene-shot .img.fit img{object-fit:contain;background:#fff;}
+
 /* ---------- 性价比图 ---------- */
 .bench-wrap{
   flex:1;display:flex;flex-direction:column;gap:.8vw;min-height:0;
@@ -546,6 +619,7 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
     scroll-snap-align:none;border-top:0!important;
   }
   .slide:last-child{page-break-after:auto;break-after:auto;}
+  .scene-shot,.flash-img{break-inside:avoid;}
   *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;}
 }
 @page{size:A4 landscape;margin:0;}
@@ -612,12 +686,12 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
           <span class="n">PART 01</span>
           <span>
             <span class="tt" data-c>大模型 API</span><span class="tt" data-t>大模型 API</span><span class="tt" data-e>LLM APIs</span>
-            <span class="dd" data-c>GLM 模型矩阵 · 按量计费 · 团队 Coding Plan</span>
-            <span class="dd" data-t>GLM 模型矩陣 · 按量計費 · 團隊 Coding Plan</span>
-            <span class="dd" data-e>GLM lineup · pay-as-you-go · Team Coding Plan</span>
+            <span class="dd" data-c>GLM 模型矩阵 · GLM-5.3-Flash · 按量计费 · Coding Plan</span>
+            <span class="dd" data-t>GLM 模型矩陣 · GLM-5.3-Flash · 按量計費 · Coding Plan</span>
+            <span class="dd" data-e>GLM lineup · GLM-5.3-Flash · pay-as-you-go · Coding Plan</span>
           </span>
         </button>
-        <button class="cnav" onclick="go(8)">
+        <button class="cnav" onclick="go(14)">
           <span class="n">PART 02</span>
           <span>
             <span class="tt" data-c>AI 原生企业级工具</span><span class="tt" data-t>AI 原生企業級工具</span><span class="tt" data-e>AI-Native Tools</span>
@@ -634,17 +708,17 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
       <div class="side-k" data-e>Highlights</div>
       <ul>
         <li><span data-c>编程能力第一的开源模型家族</span><span data-t>編程能力第一的開源模型家族</span><span data-e>#1 open-source family for coding</span></li>
+        <li><span data-c>GLM-5.3-Flash：前沿智能进入普惠时代</span><span data-t>GLM-5.3-Flash：前沿智能進入普惠時代</span><span data-e>GLM-5.3-Flash: frontier intelligence for everyone</span></li>
         <li><span data-c>API 按量付费 + 团队席位订阅</span><span data-t>API 按量付費 + 團隊席位訂閱</span><span data-e>Pay-as-you-go API + seat subscriptions</span></li>
         <li><span data-c>ZCode：白牌、主权可控的企业编程平台</span><span data-t>ZCode：白牌、主權可控的企業編程平台</span><span data-e>ZCode: white-label, sovereign coding platform</span></li>
         <li><span data-c>万卷：数字员工生产线，210+ 技能开箱即用</span><span data-t>萬卷：數字員工生產線，210+ 技能開箱即用</span><span data-e>Wanjuan: digital-employee line, 210+ skills</span></li>
-        <li><span data-c>企业级安全：数据默认不用于训练</span><span data-t>企業級安全：數據默認不用於訓練</span><span data-e>Enterprise data never used for training</span></li>
       </ul>
       <div class="cover-date" data-c>智谱 · 大湾区企业方案 · 2026 年 8 月版</div>
       <div class="cover-date" data-t>智譜 · 大灣區企業方案 · 2026 年 8 月版</div>
       <div class="cover-date" data-e>Zhipu AI · Greater Bay Area Edition · Aug 2026</div>
     </aside>
   </div>
-  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">01 / 15</span></div>
+  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">01 / 20</span></div>
 </section>
 
 <!-- ============ 02 公司简介 ============ -->
@@ -658,20 +732,20 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
     <span data-e>An AGI Leader Born from Tsinghua KEG</span>
   </h2>
   <p class="slide-sub">
-    <span data-c>成立于 2019 年，源自清华大学计算机系知识工程实验室（KEG）技术成果转化，拥有从底层算法、预训练框架到国产硬件适配的大模型全链路自主研发能力。</span>
-    <span data-t>成立於 2019 年，源自清華大學計算機系知識工程實驗室（KEG）技術成果轉化，擁有從底層演算法、預訓練框架到國產硬體適配的大模型全鏈路自主研發能力。</span>
-    <span data-e>Founded in 2019 as a spin-off of Tsinghua University's Knowledge Engineering Group (KEG), Zhipu owns the full-stack capability chain — from core algorithms and pre-training infrastructure to domestic-hardware adaptation.</span>
+    <span data-c>智谱（02513.HK）成立于 2019 年，源自清华大学计算机系知识工程实验室（KEG）的成果转化，是全球首家以通用人工智能（AGI）基座大模型为核心业务的上市公司。公司致力于 GLM 系列大模型的研发与商业化，提供云端 MaaS 调用与本地化模型部署两种服务模式，覆盖文本生成、代码辅助、多模态推理等企业级应用场景。</span>
+    <span data-t>智譜（02513.HK）成立於 2019 年，源自清華大學計算機系知識工程實驗室（KEG）的成果轉化，是全球首家以通用人工智能（AGI）基座大模型為核心業務的上市公司。公司致力於 GLM 系列大模型的研發與商業化，提供雲端 MaaS 調用與本地化模型部署兩種服務模式，覆蓋文本生成、代碼輔助、多模態推理等企業級應用場景。</span>
+    <span data-e>Zhipu (02513.HK), founded in 2019 as a spin-off of Tsinghua University's Knowledge Engineering Group (KEG), is the world's first listed company centered on AGI foundation models. It develops and commercializes the GLM model series via cloud MaaS and on-premise deployment, covering text generation, coding assistance, multimodal reasoning and more.</span>
   </p>
   <div class="stats-row">
-    <div class="stat"><div class="v"><span data-c>400万+</span><span data-t>400萬+</span><span data-e>4M+</span></div><div class="k" data-c>注册用户</div><div class="k" data-t>註冊用戶</div><div class="k" data-e>Registered users</div><div class="s" data-c>开发者与生态用户</div><div class="s" data-t>開發者與生態用戶</div><div class="s" data-e>Developers &amp; ecosystem</div></div>
-    <div class="stat"><div class="v">218</div><div class="k" data-c>覆盖国家和地区</div><div class="k" data-t>覆蓋國家和地區</div><div class="k" data-e>Countries &amp; regions</div><div class="s" data-c>全球化服务网络</div><div class="s" data-t>全球化服務網絡</div><div class="s" data-e>Global service footprint</div></div>
+    <div class="stat"><div class="v"><span data-c>740万+</span><span data-t>740萬+</span><span data-e>7.4M+</span></div><div class="k" data-c>注册企业与用户</div><div class="k" data-t>註冊企業與用戶</div><div class="k" data-e>Registered orgs &amp; users</div><div class="s" data-c>MaaS 平台累计，较 2026 年初增长 144%</div><div class="s" data-t>MaaS 平台累計，較 2026 年初增長 144%</div><div class="s" data-e>Cumulative on MaaS platform, +144% since early 2026</div></div>
+    <div class="stat"><div class="v">233</div><div class="k" data-c>服务覆盖国家及地区</div><div class="k" data-t>服務覆蓋國家及地區</div><div class="k" data-e>Countries &amp; regions served</div><div class="s" data-c>全球化服务网络</div><div class="s" data-t>全球化服務網絡</div><div class="s" data-e>Global service footprint</div></div>
     <div class="stat"><div class="v"><span data-c>24.2万+</span><span data-t>24.2萬+</span><span data-e>242K+</span></div><div class="k" data-c>付费开发者</div><div class="k" data-t>付費開發者</div><div class="k" data-e>Paying developers</div><div class="s" data-c>企业级生产使用验证</div><div class="s" data-t>企業級生產使用驗證</div><div class="s" data-e>Validated in production</div></div>
     <div class="stat"><div class="v">9<span data-c style="font-size:1.4vw">家</span><span data-t style="font-size:1.4vw">家</span><span data-e style="font-size:1.4vw"> of 10</span></div><div class="k" data-c>中国 Top 10 互联网公司集成数</div><div class="k" data-t>中國 Top 10 互聯網公司集成數</div><div class="k" data-e>China Top-10 Internet cos.</div><div class="s" data-c>头部客户共同验证</div><div class="s" data-t>頭部客戶共同驗證</div><div class="s" data-e>Adopted by leading tech giants</div></div>
   </div>
   <p class="price-note" style="margin:-0.9vw 0 1.2vw">
-    <span data-c>* 核心数据截至 2026 年 5 月，以智谱官方最新披露为准</span>
-    <span data-t>* 核心數據截至 2026 年 5 月，以智譜官方最新披露為準</span>
-    <span data-e>* Key figures as of May 2026; refer to official Zhipu disclosures for the latest</span>
+    <span data-c>* 企业与用户数截至 2026 年 8 月（据 2026 中期报告）；其余数据以智谱官方最新披露为准</span>
+    <span data-t>* 企業與用戶數截至 2026 年 8 月（據 2026 中期報告）；其餘數據以智譜官方最新披露為準</span>
+    <span data-e>* Org &amp; user figures as of Aug 2026 (2026 interim report); others per latest official disclosures</span>
   </p>
   <div class="cols">
     <ul class="point-list" style="margin-top:0">
@@ -697,9 +771,79 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
       <p style="margin-top:.8vw" data-e>One of the very few Chinese vendors with full-stack strength from low-level compute optimization and MaaS platform to end applications — serving tens of thousands of enterprises worldwide with high-availability, low-hallucination, production-grade LLM services.</p>
     </div>
   </div>
-  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">02 / 15</span></div>
+  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">02 / 20</span></div>
 </section>
 
+<!-- ============ 02b SOTA 帕累托前沿（半年报引用） ============ -->
+<section class="slide" id="slide-2b" data-wm-date="2026-09-01">
+  <div class="kicker">
+    <span data-c>智能 × 成本 · 帕累托前沿</span><span data-t>智能 × 成本 · 帕累托前沿</span><span data-e>Intelligence × Cost · Pareto Frontier</span>
+  </div>
+  <h2 class="slide-title">
+    <span data-c>SOTA 模型的帕累托前沿：迭代速度 × 智能指数 × 单任务成本</span>
+    <span data-t>SOTA 模型的帕累托前沿：迭代速度 × 智能指數 × 單任務成本</span>
+    <span data-e>The SOTA Pareto Frontier: Iteration Speed × Intelligence × Cost</span>
+  </h2>
+  <div class="bench-wrap" style="flex-direction:row;gap:1vw">
+    <div class="bench-img" style="flex:1.9"><img src="assets/pareto_sota_3d.png" alt="SOTA Pareto frontier 3D chart"></div>
+    <div class="flash-stack" style="flex:1">
+      <ul class="point-list green" style="margin-top:0">
+        <li><span class="ic">1</span><span><b data-c>六代迭代，约 11 个月</b><b data-t>六代迭代，約 11 個月</b><b data-e>Six generations in ~11 months</b><br>
+          <span data-c>GLM 系列在约 11 个月内完成 4.6、4.7、5、5.1、5.2、5.3 六代迭代，智能指数由 32 提升至 60，跨越图中全部三个范式阶段</span>
+          <span data-t>GLM 系列在約 11 個月內完成 4.6、4.7、5、5.1、5.2、5.3 六代迭代，智能指數由 32 提升至 60，跨越圖中全部三個範式階段</span>
+          <span data-e>GLM climbed 4.6 → 5.3 in ~11 months, lifting the Intelligence Index from 32 to 60 across all three paradigm stages</span></span></li>
+        <li><span class="ic">2</span><span><b data-c>单任务成本稳定在 0.2 美元档</b><b data-t>單任務成本穩定在 0.2 美元檔</b><b data-e>Steady ~$0.2 per task</b><br>
+          <span data-c>GLM-5.3-Flash 以 0.045 美元的单任务成本，进入智能－成本前沿</span>
+          <span data-t>GLM-5.3-Flash 以 0.045 美元的單任務成本，進入智能－成本前沿</span>
+          <span data-e>GLM-5.3-Flash enters the intelligence-cost frontier at just $0.045 per task</span></span></li>
+        <li><span class="ic">3</span><span><b data-c>持续最优，而非单点冠军</b><b data-t>持續最優，而非單點冠軍</b><b data-e>Sustained, not one-off, optimality</b><br>
+          <span data-c>单点冠军只是转瞬即逝的一个点，持续最优才是一条不断向上推进的轨迹</span>
+          <span data-t>單點冠軍只是轉瞬即逝的一個點，持續最優才是一條不斷向上推進的軌跡</span>
+          <span data-e>A one-off champion is a fleeting point; sustained advantage is a trajectory that keeps pushing forward</span></span></li>
+      </ul>
+      <div class="think-box">
+        <div class="tb-k" data-c>核心认知 · 模型公司的能力本质</div>
+        <div class="tb-k" data-t>核心認知 · 模型公司的能力本質</div>
+        <div class="tb-k" data-e>CORE CONVICTION · WHAT DEFINES A MODEL COMPANY</div>
+        <div class="think-item">
+          <span class="ti-ic">η</span>
+          <div class="ti-tx">
+            <span data-c><b>单位资源的智能转化效率</b>——算力、数据和人都是有价的，如何高效地将它们转化为智能能力，决定我们能走多远</span>
+            <span data-t><b>單位資源的智能轉化效率</b>——算力、數據和人都是有價的，如何高效地將它們轉化為智能能力，決定我們能走多遠</span>
+            <span data-e><b>Intelligence conversion efficiency per unit of resource</b> — compute, data and talent all carry a cost; converting them into intelligence decides how far we go</span>
+          </div>
+        </div>
+        <div class="think-item g">
+          <span class="ti-ic">⇄</span>
+          <div class="ti-tx">
+            <span data-c><b>极致组织方式：</b>研究问题从真实任务中来，研究成果直接进入下一代模型，为用户提供端到端的服务能力</span>
+            <span data-t><b>極致組織方式：</b>研究問題從真實任務中來，研究成果直接進入下一代模型，為用戶提供端到端的服務能力</span>
+            <span data-e><b>How we organize:</b> research problems come from real tasks; results feed straight into the next-generation model — end-to-end service for users</span>
+          </div>
+        </div>
+      </div>
+      <div class="think-box gold">
+        <div class="tb-k" style="color:var(--gold)" data-c>训练方法论 · 对的模型</div>
+        <div class="tb-k" style="color:var(--gold)" data-t>訓練方法論 · 對的模型</div>
+        <div class="tb-k" style="color:var(--gold)" data-e>TRAINING DOCTRINE · THE RIGHT MODEL</div>
+        <div class="think-item gd">
+          <span class="ti-ic">✓</span>
+          <div class="ti-tx">
+            <span data-c><b>在对的时间，用对的数据，训练对的规模，才有对的模型。</b>不是简单的最大，而是在当前数据与算力约束下、把训练深度做够之后回报智能上界最高的模型</span>
+            <span data-t><b>在對的時間，用對的數據，訓練對的規模，才有對的模型。</b>不是簡單的最大，而是在當前數據與算力約束下、把訓練深度做夠之後回報智能上界最高的模型</span>
+            <span data-e><b>The right time, the right data, the right scale — the right model.</b> Not simply the biggest: the highest intelligence ceiling achievable within current data and compute constraints, with training depth done properly</span>
+          </div>
+        </div>
+      </div>
+      <p class="flash-note" style="margin-top:0">
+        <span data-c>* 共 27 款旗舰模型同轴对比；智能指数与单任务成本来源：Artificial Analysis Intelligence Index（2026-08-27）。引文摘自智谱 2026 年中期报告。</span>
+        <span data-t>* 共 27 款旗艦模型同軸對比；智能指數與單任務成本來源：Artificial Analysis Intelligence Index（2026-08-27）。引文摘自智譜 2026 年中期報告。</span>
+        <span data-e>* 27 flagship models on one axis; source: Artificial Analysis Intelligence Index (Aug 27, 2026). Quotes from Zhipu's 2026 interim report.</span>
+      </p>
+    </div>
+  </div>
+  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">03 / 20</span></div>
+</section>
 <!-- ============ 03 模型矩阵 ============ -->
 <section class="slide" id="slide-3" data-wm-date="2026-08-31">
   <div class="kicker">
@@ -800,10 +944,11 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
     <a data-t href="https://docs.z.ai/guides/overview/overview">docs.z.ai 模型總覽</a>
     <a data-e href="https://docs.z.ai/guides/overview/overview">docs.z.ai/models</a>
   </div>
-  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">03 / 15</span></div>
+  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">04 / 20</span></div>
 </section>
 
-<!-- ============ 04 旗舰亮点 GLM-5.3 ============ -->
+<!-- ============ 04 GLM-5.3-Flash 能力总览（新增） ============ -->
+<!-- ============ 05 GLM-5.3-Flash 架构与成本（新增） ============ -->
 <section class="slide" id="slide-4" data-wm-date="2026-08-31">
   <div class="kicker">
     <span data-c>旗舰聚焦</span><span data-t>旗艦聚焦</span><span data-e>Flagship Focus</span>
@@ -844,28 +989,202 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
       <p class="price-note" data-e>* Benchmark charts: Zhipu official release materials (Jul 2026)</p>
     </div>
   </div>
-  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">04 / 15</span></div>
+  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">05 / 20</span></div>
 </section>
 
-<!-- ============ 05 行业基准（移入） ============ -->
-<section class="slide" id="slide-5" data-wm-date="2026-08-31">
+<!-- ============ 04b GLM-5.3-Flash 能力总览（新增） ============ -->
+<section class="slide" id="slide-4b" data-wm-date="2026-09-01">
   <div class="kicker">
-    <span data-c>行业基准</span><span data-t>行業基準</span><span data-e>Benchmarks</span>
+    <span data-c>GLM-5.3-Flash · 新品聚焦</span><span data-t>GLM-5.3-Flash · 新品聚焦</span><span data-e>GLM-5.3-Flash · Spotlight</span>
   </div>
   <h2 class="slide-title">
-    <span data-c>开源第一的编码与智能体能力</span>
-    <span data-t>開源第一的編碼與智能體能力</span>
-    <span data-e>#1 Open-Source in Coding &amp; Agency</span>
+    <span data-c>GLM-5.3-Flash：首个 GLM 原生多模态，智能能力全球前列</span>
+    <span data-t>GLM-5.3-Flash：首個 GLM 原生多模態，智能能力全球前列</span>
+    <span data-e>GLM-5.3-Flash: First Native-Multimodal GLM, Frontier Intelligence</span>
   </h2>
-  <div class="bench-wrap">
-    <div class="bench-img"><img src="assets/image3.png" alt="Benchmark detail"></div>
-    <p class="price-note">
-      <span data-c>* 基准图表来源：智谱官方发布材料（2026.07）。SWE-bench Pro、Terminal-Bench 2.1、FrontierSWE 等编码基准上，GLM 旗舰系列为开源模型第一、中国模型全项第一。</span>
-      <span data-t>* 基準圖表來源：智譜官方發布材料（2026.07）。SWE-bench Pro、Terminal-Bench 2.1、FrontierSWE 等編碼基準上，GLM 旗艦系列為開源模型第一、中國模型全項第一。</span>
-      <span data-e>* Benchmark charts: Zhipu official release (Jul 2026). On SWE-bench Pro, Terminal-Bench 2.1, FrontierSWE and more, the GLM flagship series ranks #1 among open-source models and #1 among Chinese models across the board.</span>
-    </p>
+  <p class="slide-sub">
+    <span data-c>320B 总参，能力超过 GLM-5.2；Agent 实操赛道实现代际跃升，真实世界 Agent &amp; Coding 能力全面进化。</span>
+    <span data-t>320B 總參，能力超過 GLM-5.2；Agent 實操賽道實現代際躍升，真實世界 Agent &amp; Coding 能力全面進化。</span>
+    <span data-e>320B total params, surpassing GLM-5.2; a generational leap in real-world agent &amp; coding performance.</span>
+  </p>
+  <div class="flash-grid">
+    <div class="flash-stack">
+      <ul class="point-list green" style="margin-top:0;flex:none">
+        <li><span class="ic">1</span><span><b data-c>320B 总参，综合与编程能力对标 Claude Opus 4.8</b><b data-t>320B 總參，綜合與編程能力對標 Claude Opus 4.8</b><b data-e>320B params — on par with Claude Opus 4.8</b><br>
+          <span data-c>在全球权威的 Artificial Analysis Intelligence Index（AA 综合智能指数）中取得 57 分，进入全球前沿模型能力区间，与 Anthropic 最受欢迎的模型 Claude Opus 4.8 得分持平；在自研 Z.ai Code Bench 体感评估中，编程表现与 Claude Opus 4.8 相当</span>
+          <span data-t>在全球權威的 Artificial Analysis Intelligence Index（AA 綜合智能指數）中取得 57 分，進入全球前沿模型能力區間，與 Anthropic 最受歡迎的模型 Claude Opus 4.8 得分持平；在自研 Z.ai Code Bench 體感評估中，編程表現與 Claude Opus 4.8 相當</span>
+          <span data-e>Scores 57 on the Artificial Analysis Intelligence Index — inside the global frontier band, level with Anthropic's most popular model Claude Opus 4.8; matches Claude Opus 4.8 on the Z.ai Code Bench coding evaluation</span></span></li>
+        <li><span class="ic">2</span><span><b data-c>真实世界 Agent &amp; Coding 能力跃迁</b><b data-t>真實世界 Agent &amp; Coding 能力躍遷</b><b data-e>Generational leap in agentic capability</b><br>
+          <span data-c>相对 GLM-5.2 全面大幅提升，SWE 代码修复、GUI 自动化能力表现突出，GDPVal-AA v2 业务生产力指标断层领先竞品，综合 Agent 能力跻身第一梯队</span>
+          <span data-t>相對 GLM-5.2 全面大幅提升，SWE 代碼修復、GUI 自動化能力表現突出，GDPVal-AA v2 業務生產力指標斷層領先競品，綜合 Agent 能力躋身第一梯隊</span>
+          <span data-e>Upgraded across the board vs. GLM-5.2 — standout SWE bug-fixing and GUI automation; a decisive lead on GDPVal-AA v2 business productivity, placing it in the top tier of agents</span></span></li>
+      </ul>
+      <div class="flash-img" style="min-height:0;flex:1">
+        <img src="assets/flash_perf.png" alt="GLM-5.3-Flash LLM performance evaluation">
+      </div>
+    </div>
+    <div class="flash-stack">
+      <div class="flash-img" style="min-height:0;flex:1">
+        <img src="assets/flash_aa_index.jpg" alt="Artificial Analysis Intelligence Index">
+      </div>
+      <p class="flash-note">
+        <span data-c>* 图表来源：智谱官方发布材料（2026.08）。右：AA Intelligence Index v4.1.1（57 分，全球前列）；左：六大 Agent 基准评测——Terminal Bench 2.1、DeepSWE v1.1、Agents' Last Exam、AutomationBench v1.0.6、HLE w/ Tools、GDPVal-AA v2。</span>
+        <span data-t>* 圖表來源：智譜官方發布材料（2026.08）。右：AA Intelligence Index v4.1.1（57 分，全球前列）；左：六大 Agent 基準評測——Terminal Bench 2.1、DeepSWE v1.1、Agents' Last Exam、AutomationBench v1.0.6、HLE w/ Tools、GDPVal-AA v2。</span>
+        <span data-e>* Charts: official Zhipu release (Aug 2026). Right: AA Intelligence Index v4.1.1 (57, frontier band); left: six agentic benchmarks — Terminal Bench 2.1, DeepSWE v1.1, Agents' Last Exam, AutomationBench v1.0.6, HLE w/ Tools, GDPVal-AA v2.</span>
+      </p>
+    </div>
   </div>
-  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">05 / 15</span></div>
+  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">06 / 20</span></div>
+</section>
+
+<!-- ============ 04c GLM-5.3-Flash 极致低成本架构（新增） ============ -->
+<section class="slide" id="slide-4c" data-wm-date="2026-09-01">
+  <div class="kicker">
+    <span data-c>GLM-5.3-Flash · 极致低成本</span><span data-t>GLM-5.3-Flash · 極致低成本</span><span data-e>GLM-5.3-Flash · Extreme Efficiency</span>
+  </div>
+  <h2 class="slide-title">
+    <span data-c>GLM-5.3-Flash：前沿智能进入普惠时代</span>
+    <span data-t>GLM-5.3-Flash：前沿智能進入普惠時代</span>
+    <span data-e>GLM-5.3-Flash: Frontier Intelligence for Everyone</span>
+  </h2>
+  <p class="slide-sub">
+    <span data-c>定价为 1/10 的 GLM-5.3，限时折扣内为 1/20 的 GLM-5.3，为 Opus 4.8 的 1/40。同样智力，1/40 价格，前沿智能，第一次不需要省着用。</span>
+    <span data-t>定價為 1/10 的 GLM-5.3，限時折扣內為 1/20 的 GLM-5.3，為 Opus 4.8 的 1/40。同樣智力，1/40 價格，前沿智能，第一次不需要省著用。</span>
+    <span data-e>Priced at 1/10 of GLM-5.3 — 1/20 during the launch promo, and just 1/40 of Opus 4.8. Same intelligence at 1/40 the price: frontier intelligence you no longer need to ration.</span>
+  </p>
+  <div class="flash-grid">
+    <div class="flash-stack">
+      <ul class="point-list" style="margin-top:0;flex:none">
+        <li><span class="ic">‹/›</span><span><b data-c>跻身行业帕累托最优前沿</b><b data-t>躋身行業帕累托最優前沿</b><b data-e>On the industry's Pareto frontier</b><br>
+          <span data-c>该评测覆盖 59 款主流大模型，横轴为对数刻度的单任务成本，纵轴为综合智能得分，红色曲线代表全行业帕累托最优边界。GLM-5.3-Flash（折扣价）取得 57 分，单任务成本仅 $0.045，落在全局帕累托前沿——在相近成本区间显著优于 Ling-3.0 Flash、Gemini 3.5 Flash-Lite 等模型；对比 Grok-4.5、GPT-5.6 Terra、Kimi-K3 这类高分头部模型，在能力差距很小的前提下拥有数量级的成本优势，实现性能与成本的优秀权衡</span>
+          <span data-t>該評測覆蓋 59 款主流大模型，橫軸為對數刻度的單任務成本，縱軸為綜合智能得分，紅色曲線代表全行業帕累托最優邊界。GLM-5.3-Flash（折扣價）取得 57 分，單任務成本僅 $0.045，落在全局帕累托前沿——在相近成本區間顯著優於 Ling-3.0 Flash、Gemini 3.5 Flash-Lite 等模型；對比 Grok-4.5、GPT-5.6 Terra、Kimi-K3 這類高分頭部模型，在能力差距很小的前提下擁有數量級的成本優勢，實現性能與成本的優秀權衡</span>
+          <span data-e>Across 59 mainstream models — cost per task (log scale) vs. intelligence score, red line marking the global Pareto frontier. GLM-5.3-Flash (discounted) scores 57 at just $0.045 per task, right on the frontier: clearly ahead of Ling-3.0 Flash and Gemini 3.5 Flash-Lite at similar cost, and within a small capability gap of Grok-4.5 / GPT-5.6 Terra / Kimi-K3 while orders of magnitude cheaper.</span></span></li>
+        <li><span class="ic">⚙</span><span><b data-c>极致低成本架构：线性 + 稀疏混合注意力</b><b data-t>極致低成本架構：線性 + 稀疏混合注意力</b><b data-e>Hybrid linear + sparse attention architecture</b><br>
+          <span data-c>线性注意力以递归捕获局部依赖，稀疏注意力依靠轻量索引器召回全局上下文；新增 IndexPool，通过加权池化压缩索引缓存，降低百万上下文的时延与内存开销。相较 GLM-5.3，注意力计算量下降 3.01 倍，KV 缓存降低 4.44 倍</span>
+          <span data-t>線性注意力以遞歸捕獲局部依賴，稀疏注意力依靠輕量索引器召回全局上下文；新增 IndexPool，通過加權池化壓縮索引緩存，降低百萬上下文的時延與內存開銷。相較 GLM-5.3，注意力計算量下降 3.01 倍，KV 緩存降低 4.44 倍</span>
+          <span data-e>Linear attention captures local dependencies recursively; sparse attention recalls global context via a lightweight indexer; the new IndexPool compresses index caches through weighted pooling — cutting latency and memory at 1M context. Vs. GLM-5.3: 3.01× less attention compute, 4.44× smaller KV cache.</span></span></li>
+      </ul>
+      <div class="flash-img" style="min-height:0;flex:1">
+        <img src="assets/flash_arch.png" alt="GLM-5.3-Flash architecture: linear + sparse hybrid attention">
+      </div>
+    </div>
+    <div class="flash-stack">
+      <div class="flash-img" style="min-height:0;flex:1">
+        <img src="assets/flash_pareto.jpg" alt="Pareto frontier of the AA Intelligence Index">
+      </div>
+      <p class="flash-note">
+        <span data-c>* 图表来源：智谱官方发布材料（2026.08）。右：帕累托前沿——GLM-5.3-Flash（折扣价）$0.045 / 57 分，落在全局最优边界；左：架构图——线性 + 稀疏混合注意力与 IndexPool，KV 缓存较 GLM-5.3 降低 4.44 倍、注意力计算量下降 3.01 倍。</span>
+        <span data-t>* 圖表來源：智譜官方發布材料（2026.08）。右：帕累托前沿——GLM-5.3-Flash（折扣價）$0.045 / 57 分，落在全局最優邊界；左：架構圖——線性 + 稀疏混合注意力與 IndexPool，KV 緩存較 GLM-5.3 降低 4.44 倍、注意力計算量下降 3.01 倍。</span>
+        <span data-e>* Charts: official Zhipu release (Aug 2026). Right: Pareto frontier — GLM-5.3-Flash (discounted) at $0.045 / 57 pts on the global boundary. Left: architecture — hybrid linear + sparse attention with IndexPool; 4.44× smaller KV cache and 3.01× less attention compute vs. GLM-5.3.</span>
+      </p>
+    </div>
+  </div>
+  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">07 / 20</span></div>
+</section>
+
+<!-- ============ 04d GLM-5.3-Flash 国产芯片（新增） ============ -->
+<section class="slide" id="slide-4d" data-wm-date="2026-09-01">
+  <div class="kicker">
+    <span data-c>GLM-5.3-Flash · 国产算力</span><span data-t>GLM-5.3-Flash · 國產算力</span><span data-e>GLM-5.3-Flash · Domestic Compute</span>
+  </div>
+  <h2 class="slide-title">
+    <span data-c>国产芯片深度适配，性能比肩英伟达</span>
+    <span data-t>國產晶片深度適配，性能比肩英偉達</span>
+    <span data-e>Deep Domestic-Chip Adaptation, NVIDIA-Parity Performance</span>
+  </h2>
+  <p class="slide-sub">
+    <span data-c>GLM-5.3-Flash 推理流量 100% 全部由国产芯片集群承载，大规模场景下高效、经济地支撑前沿模型推理需求。</span>
+    <span data-t>GLM-5.3-Flash 推理流量 100% 全部由國產晶片集群承載，大規模場景下高效、經濟地支撐前沿模型推理需求。</span>
+    <span data-e>100% of GLM-5.3-Flash inference traffic runs on domestic chip clusters — efficient, economical frontier inference at scale.</span>
+  </p>
+  <div class="flash-grid" style="grid-template-columns:62fr 38fr">
+    <div class="flash-stack">
+      <div class="flash-img" style="min-height:0;flex:1">
+        <img src="assets/flash_domestic_chips.png" alt="GLM-5.3-Flash 国产芯片集群推理">
+      </div>
+      <p class="flash-note">
+        <span data-c>* 图表来源：智谱官方发布材料（2026.08）。过去一周，首次在大规模流量中尝试以国产芯片集群提供服务；发布前以匿名模型 Ox-Alpha 在 OpenCode / OpenRouter 创双平台调用量新高，期间流量全部由国产芯片承载。</span>
+        <span data-t>* 圖表來源：智譜官方發布材料（2026.08）。過去一週，首次在大規模流量中嘗試以國產晶片集群提供服務；發布前以匿名模型 Ox-Alpha 在 OpenCode / OpenRouter 創雙平台調用量新高，期間流量全部由國產晶片承載。</span>
+        <span data-e>* Chart: official Zhipu release (Aug 2026). First large-scale serving on domestic chips; pre-launch, the anonymous model Ox-Alpha set all-time call records on OpenCode / OpenRouter, fully carried by domestic chips.</span>
+      </p>
+    </div>
+    <ul class="point-list green" style="margin-top:0">
+      <li><span class="ic">①</span><span><b data-c>专用推理引擎</b><b data-t>專用推理引擎</b><b data-e>Purpose-built inference engine</b><br>
+        <span data-c>基于 SGLang 构建克服单张芯片算力与内存容量相对有限的问题；构由 GLM-5.3 驱动的 infra agent 大大加速开发与优化算子、诊断性能瓶颈、改进部署核</span>
+        <span data-t>基於 SGLang 構建克服單張晶片算力與內存容量相對有限的問題；構由 GLM-5.3 驅動的 infra agent 大大加速開發與優化算子、診斷性能瓶頸、改進部署核</span>
+        <span data-e>Built on SGLang to overcome per-chip compute and memory limits; a GLM-5.3-driven infra agent accelerates operator development, bottleneck diagnosis and kernel tuning</span></span></li>
+      <li><span class="ic">②</span><span><b data-c>激进内存优化</b><b data-t>激進內存優化</b><b data-e>Aggressive memory optimization</b><br>
+        <span data-c>极致在内存容量与带宽、支持长达 1M 上下文蒸馏挑战：以算力换带宽、以通信换显存；线性注意力与 LM head 节点内能量并行；ReplaySSM、W8A8 量化、INT8/FP8/BF16 混合精度量化、Layer Split</span>
+        <span data-t>極致在內存容量與帶寬、支持長達 1M 上下文蒸餾挑戰：以算力換帶寬、以通信換顯存；線性注意力與 LM head 節點內能量並行；ReplaySSM、W8A8 量化、INT8/FP8/BF16 混合精度量化、Layer Split</span>
+        <span data-e>Pushing memory capacity &amp; bandwidth to serve 1M context: compute-for-bandwidth, communication-for-VRAM trade-offs; intra-node parallelism for linear attention &amp; LM head; ReplaySSM, W8A8, INT8/FP8/BF16 mixed precision, Layer Split</span></span></li>
+      <li><span class="ic">③</span><span><b data-c>生产级 EPD 分离架构</b><b data-t>生產級 EPD 分離架構</b><b data-e>Production-grade EPD disaggregation</b><br>
+        <span data-c>Encode 多模态编码、Prefill 预填充、Decode 逐 token 解码拆分为可独立调整、独立扩缩的工作池，集群经自研高带宽互联网络连接</span>
+        <span data-t>Encode 多模態編碼、Prefill 預填充、Decode 逐 token 解碼拆分為可獨立調整、獨立擴縮的工作池，集群經自研高帶寬互聯網絡連接</span>
+        <span data-e>Encode (multimodal), Prefill and Decode run as independently tuned, independently scaled pools over a proprietary high-bandwidth interconnect</span></span></li>
+      <li><span class="ic">④</span><span><b data-c>端到端产出 3 倍提升</b><b data-t>端到端產出 3 倍提升</b><b data-e>3× end-to-end throughput</b><br>
+        <span data-c>相较同一硬件初始基线，硬件效率与单 token 成本两项指标达到相当水平——主流英伟达 GPU 同级表现</span>
+        <span data-t>相較同一硬件初始基線，硬件效率與單 token 成本兩項指標達到相當水平——主流英偉達 GPU 同級表現</span>
+        <span data-e>vs. the same hardware's initial baseline — hardware efficiency and per-token cost on par with mainstream NVIDIA GPUs</span></span></li>
+    </ul>
+  </div>
+  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">08 / 20</span></div>
+</section>
+
+<!-- ============ 04e GLM-5.3-Flash 场景实践（新增） ============ -->
+<section class="slide" id="slide-4e" data-wm-date="2026-09-01">
+  <div class="kicker">
+    <span data-c>GLM-5.3-Flash · 场景实践</span><span data-t>GLM-5.3-Flash · 場景實踐</span><span data-e>GLM-5.3-Flash · In Action</span>
+  </div>
+  <h2 class="slide-title">
+    <span data-c>GLM-5.3-Flash：场景最佳实践</span>
+    <span data-t>GLM-5.3-Flash：場景最佳實踐</span>
+    <span data-e>GLM-5.3-Flash: Best Practices in the Wild</span>
+  </h2>
+  <p class="slide-sub">
+    <span data-c>从视觉驱动的 UI Coding 到 Computer Use 闭环，原生多模态能力贯穿真实生产场景。</span>
+    <span data-t>從視覺驅動的 UI Coding 到 Computer Use 閉環，原生多模態能力貫穿真實生產場景。</span>
+    <span data-e>From vision-driven UI coding to Computer Use loops — native multimodality across real production scenarios.</span>
+  </p>
+  <div class="scene-grid">
+    <div class="scene-shot">
+      <div class="sc"><span data-c>视觉驱动的 UI Coding</span><span data-t>視覺驅動的 UI Coding</span><span data-e>Vision-driven UI Coding</span></div>
+      <div class="sd"><span data-c>一句话生成完整可用的应用界面</span><span data-t>一句話生成完整可用的應用界面</span><span data-e>Full working app UI from one sentence</span></div>
+      <div class="img fit"><img src="assets/flash_ui_coding.jpg" alt="UI Coding demo"></div>
+    </div>
+    <div class="scene-shot">
+      <div class="sc"><span data-c>3D 场景：一句话搭建完整 Blender 工程</span><span data-t>3D 場景：一句話搭建完整 Blender 工程</span><span data-e>3D: full Blender scene from one sentence</span></div>
+      <div class="sd"><span data-c>从需求描述到可渲染三维工程文件</span><span data-t>從需求描述到可渲染三維工程文件</span><span data-e>From prompt to renderable 3D scene</span></div>
+      <div class="img"><img src="assets/flash_blender3d.jpg" alt="Blender 3D demo"></div>
+    </div>
+    <div class="scene-shot">
+      <div class="sc"><span data-c>Office 成品交付：从内容组织到视觉校验</span><span data-t>Office 成品交付：從內容組織到視覺校驗</span><span data-e>Office delivery: content to visual QA</span></div>
+      <div class="sd"><span data-c>从零生成或参照复刻，渲染自检溢出与错位</span><span data-t>從零生成或參照復刻，渲染自檢溢出與錯位</span><span data-e>Generates from scratch or by reference, self-checking layout</span></div>
+      <div class="img fit"><img src="assets/flash_office_ppt.png" alt="Office delivery demo"></div>
+    </div>
+    <div class="scene-shot">
+      <div class="sc"><span data-c>视觉理解与剪辑：从长素材到可发布成片</span><span data-t>視覺理解與剪輯：從長素材到可發布成片</span><span data-e>Video editing: raw footage to release cut</span></div>
+      <div class="sd"><span data-c>理解长视频内容，自动剪辑产出可发布成片</span><span data-t>理解長視頻內容，自動剪輯產出可發布成片</span><span data-e>Understands long footage, auto-edits to a publishable cut</span></div>
+      <div class="img"><img src="assets/flash_video_edit.jpg" alt="Video editing demo"></div>
+    </div>
+    <div class="scene-shot">
+      <div class="sc"><span data-c>更多场景</span><span data-t>更多場景</span><span data-e>More scenarios</span></div>
+      <div class="sd"><span data-c>CAD 视觉复刻：从设计图到可编辑三维模型；演示视频见原 PPT</span><span data-t>CAD 視覺復刻：從設計圖到可編輯三維模型；演示視頻見原 PPT</span><span data-e>CAD vision: drawing to editable 3D; demo video in the original PPT</span></div>
+      <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:.55vw;padding:.8vw .9vw;background:linear-gradient(160deg,rgba(30,79,216,.05),rgba(15,164,127,.05));">
+        <div style="font-size:.8vw;font-weight:800;color:var(--brand-ink)" data-c>为什么是 GLM-5.3-Flash？</div>
+        <div style="font-size:.8vw;font-weight:800;color:var(--brand-ink);display:none" data-t>為什麼是 GLM-5.3-Flash？</div>
+        <div style="font-size:.8vw;font-weight:800;color:var(--brand-ink);display:none" data-e>Why GLM-5.3-Flash?</div>
+        <div style="font-size:.74vw;line-height:1.55;color:var(--ink-2)" data-c>原生多模态 + 一线 Agent 能力 + 1/40 的旗舰价格，让视觉驱动的自动化第一次可以大规模铺开——从界面生成到桌面操作，从文档交付到视频剪辑，一个模型贯穿全流程。</div>
+        <div style="font-size:.74vw;line-height:1.55;color:var(--ink-2);display:none" data-t>原生多模態 + 一線 Agent 能力 + 1/40 的旗艦價格，讓視覺驅動的自動化第一次可以大規模鋪開——從界面生成到桌面操作，從文檔交付到視頻剪輯，一個模型貫穿全流程。</div>
+        <div style="font-size:.74vw;line-height:1.55;color:var(--ink-2);display:none" data-e>Native multimodality, top-tier agency and 1/40 the flagship price — vision-driven automation can finally scale: from UI generation to desktop operation, documents to video, one model end to end.</div>
+      </div>
+    </div>
+    <div class="scene-shot">
+      <div class="sc"><span data-c>Computer Use 闭环：界面操作、测试、修正</span><span data-t>Computer Use 閉環：界面操作、測試、修正</span><span data-e>Computer Use loop: operate, test, fix</span></div>
+      <div class="sd"><span data-c>自主操作真实界面完成任务并持续自我修正</span><span data-t>自主操作真實界面完成任務並持續自我修正</span><span data-e>Autonomously operates real UIs, self-corrects until done</span></div>
+      <div class="img fit"><img src="assets/flash_computer_use.png" alt="Computer Use demo"></div>
+    </div>
+  </div>
+  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">09 / 20</span></div>
 </section>
 
 <!-- ============ 06 API 定价 ============ -->
@@ -957,7 +1276,7 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
       <div class="d" style="margin-top:.4vw" data-e>Standard Chat Completions endpoint compatible with mainstream SDKs; docs cover model list, auth, streaming and error codes — your first call within minutes.</div>
     </div>
   </div>
-  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">06 / 15</span></div>
+  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">10 / 20</span></div>
 </section>
 
 <!-- ============ 07 性价比图 ============ -->
@@ -978,9 +1297,103 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
   <div class="bench-wrap">
     <div class="bench-img"><img src="assets/aa_value.png" alt="Artificial Analysis intelligence vs cost"></div>
   </div>
-  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">07 / 15</span></div>
+  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">11 / 20</span></div>
 </section>
 
+<!-- ============ 04f 个人版 Coding Plan ============ -->
+<section class="slide" id="slide-4f" data-wm-date="2026-09-01">
+  <div class="kicker">
+    <span data-c>GLM Coding Plan · 个人版</span><span data-t>GLM Coding Plan · 個人版</span><span data-e>GLM Coding Plan · Personal</span>
+  </div>
+  <h2 class="slide-title">
+    <span data-c>个人编程套餐：在主流 AI 编码工具中体验 Claude 级能力</span>
+    <span data-t>個人編程套餐：在主流 AI 編碼工具中體驗 Claude 級能力</span>
+    <span data-e>Personal Coding Plan: Claude-Class Power in Your Favorite Tools</span>
+  </h2>
+  <p class="slide-sub">
+    <span data-c>专为 AI 编码打造的订阅套餐，支持在主流 AI 编码工具中畅享智谱旗舰高智能模型 GLM-5.3 及 GLM-5.3-Flash，打造顶尖、高速、稳定的编码体验；支持 20+ 主流编码工具，覆盖多样化开发场景。</span>
+    <span data-t>專為 AI 編碼打造的訂閱套餐，支持在主流 AI 編碼工具中暢享智譜旗艦高智能模型 GLM-5.3 及 GLM-5.3-Flash，打造頂尖、高速、穩定的編碼體驗；支持 20+ 主流編碼工具，覆蓋多樣化開發場景。</span>
+    <span data-e>A subscription built for AI coding: enjoy flagship GLM-5.3 and GLM-5.3-Flash inside mainstream AI coding tools — top-tier, fast and stable, with 20+ supported tools covering diverse dev scenarios.</span>
+  </p>
+  <div class="flash-grid" style="grid-template-columns:1fr 1.15fr">
+    <div class="flash-stack">
+      <div class="use-grid">
+        <div class="use-card">
+          <div class="uc-ic">01</div>
+          <div class="uc-t" data-c>自然语言编程</div><div class="uc-t" data-t>自然語言編程</div><div class="uc-t" data-e>Natural-language coding</div>
+          <div class="uc-d" data-c>对话描述需求，自动制定计划、生成代码、调试问题</div>
+          <div class="uc-d" data-t>對話描述需求，自動制定計劃、生成代碼、調試問題</div>
+          <div class="uc-d" data-e>Describe needs in chat; plans, code and debugging happen automatically</div>
+        </div>
+        <div class="use-card">
+          <div class="uc-ic">02</div>
+          <div class="uc-t" data-c>智能代码补全</div><div class="uc-t" data-t>智能代碼補全</div><div class="uc-t" data-e>Smart completion</div>
+          <div class="uc-d" data-c>基于上下文实时生成补全建议</div>
+          <div class="uc-d" data-t>基於上下文實時生成補全建議</div>
+          <div class="uc-d" data-e>Context-aware completion suggestions in real time</div>
+        </div>
+        <div class="use-card">
+          <div class="uc-ic">03</div>
+          <div class="uc-t" data-c>代码调试修复</div><div class="uc-t" data-t>代碼調試修復</div><div class="uc-t" data-e>Debug &amp; repair</div>
+          <div class="uc-d" data-c>自动分析代码库、定位问题并提供修复方案</div>
+          <div class="uc-d" data-t>自動分析代碼庫、定位問題並提供修復方案</div>
+          <div class="uc-d" data-e>Auto-analyze the repo, locate issues and propose fixes</div>
+        </div>
+        <div class="use-card">
+          <div class="uc-ic">04</div>
+          <div class="uc-t" data-c>代码库问答</div><div class="uc-t" data-t>代碼庫問答</div><div class="uc-t" data-e>Repo Q&amp;A</div>
+          <div class="uc-d" data-c>结合外部数据源精准解答</div>
+          <div class="uc-d" data-t>結合外部數據源精準解答</div>
+          <div class="uc-d" data-e>Precise answers grounded in external sources</div>
+        </div>
+        <div class="use-card">
+          <div class="uc-ic">05</div>
+          <div class="uc-t" data-c>自动化任务处理</div><div class="uc-t" data-t>自動化任務處理</div><div class="uc-t" data-e>Task automation</div>
+          <div class="uc-d" data-c>一键修复 lint 问题、解决合并冲突、生成发行说明</div>
+          <div class="uc-d" data-t>一鍵修復 lint 問題、解決合併衝突、生成發行說明</div>
+          <div class="uc-d" data-e>One click to fix lint issues, resolve merge conflicts, draft release notes</div>
+        </div>
+      </div>
+      <p class="flash-note" style="margin-top:0">
+        <span data-c>* 五大核心用法同样覆盖 MCP 扩展：视觉理解、联网搜索与网页获取。</span>
+        <span data-t>* 五大核心用法同樣覆蓋 MCP 擴展：視覺理解、聯網搜索與網頁獲取。</span>
+        <span data-e>* The five core uses extend to MCPs: vision, web search and web fetch.</span>
+      </p>
+    </div>
+    <div class="flash-stack">
+      <div class="cp-plans" style="flex:none">
+        <div class="cp-plan">
+          <div class="pnm">Lite</div>
+          <div class="prc">¥118<span class="u"> /月</span></div>
+          <ul class="fl">
+            <li data-c>每周 10,000 积分（约 0.43～0.87 亿 Tokens/周）</li><li data-t>每週 10,000 積分（約 0.43～0.87 億 Tokens/週）</li><li data-e>10,000 credits / week (~43M–87M tokens)</li>
+          </ul>
+        </div>
+        <div class="cp-plan adv">
+          <div class="pnm">Pro<span class="tag b" data-c>推荐</span><span class="tag b" data-t>推薦</span><span class="tag b" data-e>Popular</span></div>
+          <div class="prc">¥538<span class="u"> /月</span></div>
+          <ul class="fl">
+            <li data-c>6 倍 Lite 用量额度（约 2.63～5.26 亿 Tokens/周）</li><li data-t>6 倍 Lite 用量額度（約 2.63～5.26 億 Tokens/週）</li><li data-e>6× Lite quota (~263M–526M tokens / week)</li>
+          </ul>
+        </div>
+        <div class="cp-plan">
+          <div class="pnm">Max</div>
+          <div class="prc">¥1,078<span class="u"> /月</span></div>
+          <ul class="fl">
+            <li data-c>14 倍 Lite 用量额度（约 6.13～12.26 亿 Tokens/周）</li><li data-t>14 倍 Lite 用量額度（約 6.13～12.26 億 Tokens/週）</li><li data-e>14× Lite quota (~613M–1,226M tokens / week)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="official-links" style="margin-top:0">
+        <span class="lk-k" data-c>订阅入口：</span><span class="lk-k" data-t>訂閱入口：</span><span class="lk-k" data-e>Subscribe:</span>
+        <a data-c href="https://bigmodel.cn/glm-coding">bigmodel.cn/glm-coding</a>
+        <a data-t href="https://z.ai/subscribe">z.ai/subscribe</a>
+        <a data-e href="https://z.ai/subscribe">z.ai/subscribe</a>
+      </div>
+    </div>
+  </div>
+  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">12 / 20</span></div>
+</section>
 <!-- ============ 07 Coding Plan 合并页 ============ -->
 <section class="slide" id="slide-8" data-wm-date="2026-08-31">
   <div class="kicker">
@@ -994,32 +1407,32 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
   <div class="cp-wrap">
     <div class="cp-left">
       <p class="slide-sub" style="margin-bottom:0">
-        <span data-c>2026 年 5 月推出的自助订阅方案：高额顶尖模型用量 + 兼容全球主流编码工具 + 团队管理与统一账单，高频用量下往往比按量 API 更划算。Coding Plan 内 GLM-5.3-Flash 额度为 GLM-5.3 的 3 倍。</span>
-        <span data-t>2026 年 5 月推出的自助訂閱方案：高額頂尖模型用量 + 兼容全球主流編碼工具 + 團隊管理與統一賬單，高頻用量下往往比按量 API 更划算。Coding Plan 內 GLM-5.3-Flash 額度為 GLM-5.3 的 3 倍。</span>
-        <span data-e>A self-service subscription launched May 2026: generous top-tier usage + mainstream coding tools + team management and unified billing — often cheaper than pay-as-you-go API at volume. GLM-5.3-Flash carries 3× the quota of GLM-5.3 inside the plan.</span>
+        <span data-c>2026 年 5 月推出的自助订阅方案：高额顶尖模型用量 + 兼容全球主流编码工具 + 组织席位/用量看板/集中账单，高频用量下往往比按量 API 更划算（善用非高峰 5 折，较按量调用 GLM-5.3 最高省 92%）。</span>
+        <span data-t>2026 年 5 月推出的自助訂閱方案：高額頂尖模型用量 + 兼容全球主流編碼工具 + 組織席位/用量看板/集中賬單，高頻用量下往往比按量 API 更划算（善用非高峰 5 折，較按量調用 GLM-5.3 最高省 92%）。</span>
+        <span data-e>A self-service subscription launched May 2026: generous top-tier usage + mainstream coding tools + org seats, usage dashboards and centralized billing — often cheaper than pay-as-you-go at volume (with the 50% off-peak discount, up to 92% cheaper than metered GLM-5.3 API).</span>
       </p>
       <div class="cp-feats" style="margin-top:.7vw">
         <div class="cp-feat"><span class="fic">✓</span><span data-c><b>兼容主流编码工具</b>：Claude Code、Cline、Roo Code 等 20+ 工具即插即用，不改变团队既有工作流</span><span data-t><b>兼容主流編碼工具</b>：Claude Code、Cline、Roo Code 等 20+ 工具即插即用，不改變團隊既有工作流</span><span data-e><b>Works with mainstream tools</b>: drop-in with Claude Code, Cline, Roo Code and 20+ others — no workflow change</span></div>
         <div class="cp-feat"><span class="fic">✓</span><span data-c><b>按席位独立限额</b>：单个成员触顶不影响其他人继续使用；Team Plan Key 与平台 API Key 相互独立</span><span data-t><b>按席位獨立限額</b>：單個成員觸頂不影響其他人繼續使用；Team Plan Key 與平台 API Key 相互獨立</span><span data-e><b>Per-seat limits</b>: one member hitting the cap never affects others; Team Plan Key is independent from platform API keys</span></div>
-        <div class="cp-feat"><span class="fic">✓</span><span data-c><b>超额与预算控制</b>：管理员可开启按量超额付费，按成员设置消耗上限，成本不失控</span><span data-t><b>超額與預算控制</b>：管理員可開啟按量超額付費，按成員設置消耗上限，成本不失控</span><span data-e><b>Overage &amp; budget control</b>: admins enable pay-as-you-go overage with per-member spend caps</span></div>
+        <div class="cp-feat"><span class="fic">✓</span><span data-c><b>超额付费 + 安全管控</b>：额度用尽可按量付费（限时刊例价 9 折）并按成员设预算上限；支持 IP 白名单，仅允许指定地址访问</span><span data-t><b>超額付費 + 安全管控</b>：額度用盡可按量付費（限時刊例價 9 折）並按成員設預算上限；支持 IP 白名單，僅允許指定位址訪問</span><span data-e><b>Overage &amp; security</b>: pay-as-you-go overage at 10% off list price (limited time) with per-member budget caps; IP allowlist restricts access to trusted networks</span></div>
       </div>
       <div class="cp-rules" style="margin-top:.7vw">
         <div class="cp-rule"><span class="rk" data-c>规</span><span class="rk" data-t>規</span><span class="rk" data-e>01</span>
-          <span data-c><b>席位规则</b>：2 席位起购、无上限；成员与席位 1:1 不共享；有效期内可重新分配；个人版与团队版可并存</span>
-          <span data-t><b>席位規則</b>：2 席位起購、無上限；成員與席位 1:1 不共享；有效期內可重新分配；個人版與團隊版可並存</span>
-          <span data-e><b>Seats</b>: from 2 seats, no cap; members and seats 1:1, no sharing; reassignable within validity; personal and team plans coexist</span></div>
+          <span data-c><b>席位规则</b>：2 席位起购、无上限；成员与席位 1:1 不共享；暂不支持标准/高级版混购；个人版与团队版可并存</span>
+          <span data-t><b>席位規則</b>：2 席位起購、無上限；成員與席位 1:1 不共享；暫不支持標準/高級版混購；個人版與團隊版可並存</span>
+          <span data-e><b>Seats</b>: from 2 seats, no cap; 1:1 member-to-seat, no sharing; Standard/Advanced mixing not yet supported; personal and team plans coexist</span></div>
         <div class="cp-rule"><span class="rk" data-c>耗</span><span class="rk" data-t>耗</span><span class="rk" data-e>02</span>
-          <span data-c><b>消耗系数</b>：GLM-5.2 / GLM-5-Turbo 高峰期 3 倍、非高峰 2 倍（限时非高峰 1 倍，至 2026 年 9 月底）；高峰期 14:00–18:00（UTC+8）</span>
-          <span data-t><b>消耗係數</b>：GLM-5.2 / GLM-5-Turbo 高峰期 3 倍、非高峰 2 倍（限時非高峰 1 倍，至 2026 年 9 月底）；高峰期 14:00–18:00（UTC+8）</span>
-          <span data-e><b>Coefficients</b>: GLM-5.2 / GLM-5-Turbo at 3× peak, 2× off-peak (limited-time 1× off-peak until end-Sep 2026); peak = 14:00–18:00 UTC+8</span></div>
+          <span data-c><b>积分抵扣</b>：模型积分 =（输入 Token×输入系数 + 缓存 Token×缓存系数 + 输出 Token×输出系数）÷ 10000，按模型差异化抵扣；非高峰时段一律按基础积分 50% 抵扣</span>
+          <span data-t><b>積分抵扣</b>：模型積分 =（輸入 Token×輸入係數 + 緩存 Token×緩存係數 + 輸出 Token×輸出係數）÷ 10000，按模型差異化抵扣；非高峰時段一律按基礎積分 50% 抵扣</span>
+          <span data-e><b>Credits</b>: model credits = (input tokens×input rate + cached tokens×cached rate + output tokens×output rate) ÷ 10,000, varying by model; off-peak calls billed at 50% of base credits</span></div>
         <div class="cp-rule"><span class="rk" data-c>M</span><span class="rk" data-t>M</span><span class="rk" data-e>03</span>
-          <span data-c><b>MCP 额度</b>：联网搜索 / 网页读取 / 开源仓库共享月度次数（标准 1,000 / 高级 4,000）；视觉理解 MCP 不计次数，与模型共享 tokens</span>
-          <span data-t><b>MCP 額度</b>：聯網搜索 / 網頁讀取 / 開源倉庫共享月度次數（標準 1,000 / 高級 4,000）；視覺理解 MCP 不計次數，與模型共享 tokens</span>
-          <span data-e><b>MCP quota</b>: Search / Web Reader / Repo share monthly counts (1,000 Std / 4,000 Adv); Vision MCP unlimited in calls, shares token quota</span></div>
+          <span data-c><b>MCP 抵扣</b>：MCP 积分 = 调用次数 × 输出抵扣系数（联网搜索 / 网页读取 / 开源仓库均为 1.2）；视觉理解 MCP 不单独计次，与模型共享积分</span>
+          <span data-t><b>MCP 抵扣</b>：MCP 積分 = 調用次數 × 輸出抵扣係數（聯網搜索 / 網頁讀取 / 開源倉庫均為 1.2）；視覺理解 MCP 不單獨計次，與模型共享積分</span>
+          <span data-e><b>MCP credits</b>: MCP credits = calls × output rate (Search / Web Reader / Repo all at 1.2); Vision MCP shares the model credit pool, no separate count</span></div>
         <div class="cp-rule"><span class="rk" data-c>订</span><span class="rk" data-t>訂</span><span class="rk" data-e>04</span>
-          <span data-c><b>订阅方式</b>：连续订阅限 3 万元以下，超出可选按月 / 按年；额度每 5 小时动态刷新、每周重置</span>
-          <span data-t><b>訂閱方式</b>：連續訂閱限 3 萬元以下，超出可選按月 / 按年；額度每 5 小時動態刷新、每週重置</span>
-          <span data-e><b>Subscription</b>: continuous subscription below ¥30K, monthly / annual above; quotas refresh every 5 hours and reset weekly</span></div>
+          <span data-c><b>订阅与刷新</b>：连续订阅限 3 万元以下；年付 9 折；5 小时积分在消耗 5 小时后动态刷新，周积分自下单起每 7 天刷新</span>
+          <span data-t><b>訂閱與刷新</b>：連續訂閱限 3 萬元以下；年付 9 折；5 小時積分在消耗 5 小時後動態刷新，週積分自下單起每 7 天刷新</span>
+          <span data-e><b>Subscription &amp; refresh</b>: continuous subscription below ¥30K; annual plans 10% off; 5-hour credits refresh dynamically 5 hours after use, weekly credits renew every 7 days from purchase</span></div>
       </div>
     </div>
     <div class="cp-right">
@@ -1032,9 +1445,9 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
             <span data-e>$88<span class="u"> /seat/mo</span><span class="alt">CN ¥598</span></span>
           </div>
           <ul class="fl">
-            <li data-c>每 5 小时 0.6 亿 / 每周 3 亿 tokens（每席位）</li><li data-t>每 5 小時 0.6 億 / 每週 3 億 tokens（每席位）</li><li data-e>60M per 5 hrs / 300M weekly tokens (per seat)</li>
+            <li data-c>每 5 小时 15,000 积分 / 每周 66,000 积分（每席位）</li><li data-t>每 5 小時 15,000 積分 / 每週 66,000 積分（每席位）</li><li data-e>15,000 credits per 5 hrs / 66,000 weekly credits (per seat)</li>
+            <li data-c>标准版全部权益</li><li data-t>標準版全部權益</li><li data-e>All Standard benefits</li>
             <li data-c>MCP 月度调用合计 1,000 次</li><li data-t>MCP 月度調用合計 1,000 次</li><li data-e>1,000 MCP calls / month</li>
-            <li data-c>全部团队管理与企业能力</li><li data-t>全部團隊管理與企業能力</li><li data-e>Full team management &amp; enterprise features</li>
           </ul>
         </div>
         <div class="cp-plan adv">
@@ -1045,29 +1458,37 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
             <span data-e>$188<span class="u"> /seat/mo</span><span class="alt">CN ¥1,198</span></span>
           </div>
           <ul class="fl">
-            <li data-c>每 5 小时 1.6 亿 / 每周 8 亿 tokens（每席位）</li><li data-t>每 5 小時 1.6 億 / 每週 8 億 tokens（每席位）</li><li data-e>160M per 5 hrs / 800M weekly tokens (per seat)</li>
+            <li data-c>每 5 小时 35,000 积分 / 每周 155,000 积分（每席位）</li><li data-t>每 5 小時 35,000 積分 / 每週 155,000 積分（每席位）</li><li data-e>35,000 credits per 5 hrs / 155,000 weekly credits (per seat)</li>
             <li data-c>MCP 月度调用合计 4,000 次</li><li data-t>MCP 月度調用合計 4,000 次</li><li data-e>4,000 MCP calls / month</li>
             <li class="pro" data-c>首发接入最新旗舰模型与功能</li><li class="pro" data-t>首發接入最新旗艦模型與功能</li><li class="pro" data-e>Early access to latest flagships &amp; features</li>
             <li class="pro" data-c>高峰期专属资源优先保障</li><li class="pro" data-t>高峰期專屬資源優先保障</li><li class="pro" data-e>Priority resource assurance at peak</li>
           </ul>
         </div>
       </div>
+      <div class="svc" style="flex:none;border-top:.3vw solid var(--gold);padding:.9vw 1vw">
+        <div class="t"><span data-c>企业权益</span><span data-t>企業權益</span><span data-e>Enterprise Benefits</span></div>
+        <div class="d">
+          <span data-c>企业级数据安全：数据不用于训练，支持更高加密标准｜灵活套餐管理：批量管理席位，按需调整套餐等级资源配置｜精准用量监控：实时查看与分析成员使用情况及用量分布｜专享服务保障：配备专属技术支持、专线对接群保障售后，创新功能优先体验</span>
+          <span data-t>企業級數據安全：數據不用於訓練，支持更高加密標準｜靈活套餐管理：批量管理席位，按需調整套餐等級資源配置｜精準用量監控：實時查看與分析成員使用情況及用量分佈｜專享服務保障：配備專屬技術支持、專線對接群保障售後，創新功能優先體驗</span>
+          <span data-e>Enterprise-grade data security: data never used for training, higher encryption standards | flexible plan management: manage seats in bulk, adjust plan tiers on demand | precise usage monitoring: real-time visibility into member usage and distribution | dedicated service assurance: dedicated technical support, dedicated support channel, priority access to new features</span>
+        </div>
+      </div>
       <div class="official-links" style="margin-top:.2vw">
         <span class="lk-k" data-c>产品介绍与订阅：</span><span class="lk-k" data-t>產品介紹與訂閱：</span><span class="lk-k" data-e>Product &amp; subscribe:</span>
         <a data-c href="https://bigmodel.cn/glm-coding">bigmodel.cn/glm-coding</a>
-        <a data-c href="https://bigmodel.cn/claude-code">团队版方案详情</a>
+        <a data-c href="https://docs.bigmodel.cn/cn/coding-plan/team/admin-manual">团队版操作手册</a>
         <a data-t href="https://z.ai/subscribe">z.ai/subscribe</a>
         <a data-e href="https://z.ai/subscribe">z.ai/subscribe</a>
         <a data-e href="https://docs.z.ai/devpack/quick-start">Quick-start docs</a>
       </div>
       <p class="price-note" style="margin-top:.1vw">
-        <span data-c>注：2 席位起购、无上限；标准版建议 1–2 个并行项目，高级版 2+；非高峰时段并发权益动态升级。</span>
-        <span data-t>注：2 席位起購、無上限；標準版建議 1–2 個並行項目，高級版 2+；非高峰時段並發權益動態升級。</span>
-        <span data-e>Notes: from 2 seats, no cap; Standard suits 1–2 concurrent projects, Advanced 2+; off-peak hours bring dynamically upgraded concurrency.</span>
+        <span data-c>注：2 席位起购、无上限；标准版建议 1–2 个并行项目，高级版 2+；年付 9 折（标准版折后低至 ¥538.2/月，高级版 ¥1,078.2/月）。</span>
+        <span data-t>注：2 席位起購、無上限；標準版建議 1–2 個並行項目，高級版 2+；年付 9 折（標準版折後低至 ¥538.2/月，高級版 ¥1,078.2/月）。</span>
+        <span data-e>Notes: from 2 seats, no cap; Standard suits 1–2 concurrent projects, Advanced 2+; annual plans at 10% off (Standard from ¥538.2/mo, Advanced ¥1,078.2/mo).</span>
       </p>
     </div>
   </div>
-  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">08 / 15</span></div>
+  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">13 / 20</span></div>
 </section>
 
 <!-- ============ 11 为什么官方 API ============ -->
@@ -1131,7 +1552,7 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
       <div class="wi" data-e><b>Entitlement &amp; billing risks:</b> some third-party "open-source APIs" throttle, strip features (caching, structured output), bill opaquely or halt service without notice — unfit for production</div>
     </div>
   </div>
-  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">09 / 15</span></div>
+  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">14 / 20</span></div>
 </section>
 
 <!-- ============ 11 PART 02 分隔页 ============ -->
@@ -1170,10 +1591,10 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
       </ul>
     </aside>
   </div>
-  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">10 / 15</span></div>
+  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">15 / 20</span></div>
 </section>
 
-<!-- ============ 12 ZCode 产品 ============ -->
+<!-- ============ 16 ZCode 产品 ============ -->
 <section class="slide" id="slide-11" data-wm-date="2026-08-31">
   <div class="kicker">
     <span data-c>ZCode Enterprise</span><span data-t>ZCode Enterprise</span><span data-e>ZCode Enterprise</span>
@@ -1235,7 +1656,7 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
       </a>
     </div>
   </div>
-  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">11 / 15</span></div>
+  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">16 / 20</span></div>
 </section>
 
 <!-- ============ 13 ZCode 治理与交付 ============ -->
@@ -1288,7 +1709,7 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
       </div>
     </div>
   </div>
-  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">12 / 15</span></div>
+  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">17 / 20</span></div>
 </section>
 
 <!-- ============ 14 万卷平台 ============ -->
@@ -1334,7 +1755,7 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
       <div class="img"><img src="assets/wanjuan_ui.jpeg" alt="Wanjuan AI application hub UI"></div>
     </div>
   </div>
-  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">13 / 15</span></div>
+  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">18 / 20</span></div>
 </section>
 
 <!-- ============ 15 万卷场景与价值 ============ -->
@@ -1383,7 +1804,7 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
       </div>
     </div>
   </div>
-  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">14 / 15</span></div>
+  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">19 / 20</span></div>
 </section>
 
 <!-- ============ 13 结尾联系 ============ -->
@@ -1420,7 +1841,7 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
       </div>
     </div>
   </div>
-  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">15 / 15</span></div>
+  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">20 / 20</span></div>
 </section>
 
 <script>
