@@ -608,6 +608,29 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
 .qr-box .qk{font-size:.8vw;font-weight:600;color:var(--muted);text-align:center;line-height:1.4;}
 @media print{.contact-info a.ln{color:var(--ink-2);}}
 
+/* ---------- 合规免责声明页（单文档框） ---------- */
+.legal-doc{
+  background:var(--panel);border:1px solid var(--line);border-radius:.8vw;
+  border-left:.3vw solid var(--brand);
+  padding:1vw 1.3vw;flex:1;min-height:0;
+}
+.legal-doc .lg-p{
+  font-size:.8vw;color:var(--ink-2);line-height:1.68;text-align:justify;
+  margin-bottom:.78vw;
+}
+.legal-doc .lg-p:last-child{margin-bottom:0;}
+.legal-doc .lg-p b{color:var(--ink);}
+.legal-doc .lg-p .lh{
+  display:block;font-weight:800;color:var(--ink);
+  font-size:.84vw;letter-spacing:.02em;margin-bottom:.18vw;
+}
+.legal-doc .lg-p .lh::after{content:'';display:block;width:1.6vw;height:.13vw;background:var(--brand);border-radius:.1vw;margin-top:.2vw;}
+.legal-kick{
+  font-size:.68vw;font-weight:800;letter-spacing:.18em;color:var(--brand);
+  display:flex;align-items:center;gap:.5vw;
+}
+.legal-kick::before{content:'';width:1.4vw;height:.16vw;background:var(--brand);border-radius:.1vw;}
+
 /* ---------- 打印 ---------- */
 @media print{
   html,body{height:auto!important;overflow:visible!important;scroll-snap-type:none!important;background:#fff;}
@@ -718,7 +741,7 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
       <div class="cover-date" data-e>Zhipu AI · Greater Bay Area Edition · Aug 2026</div>
     </aside>
   </div>
-  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">01 / 20</span></div>
+  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">01 / 21</span></div>
 </section>
 
 <!-- ============ 02 公司简介 ============ -->
@@ -771,7 +794,7 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
       <p style="margin-top:.8vw" data-e>One of the very few Chinese vendors with full-stack strength from low-level compute optimization and MaaS platform to end applications — serving tens of thousands of enterprises worldwide with high-availability, low-hallucination, production-grade LLM services.</p>
     </div>
   </div>
-  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">02 / 20</span></div>
+  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">02 / 21</span></div>
 </section>
 
 <!-- ============ 02b SOTA 帕累托前沿（半年报引用） ============ -->
@@ -842,7 +865,7 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
       </p>
     </div>
   </div>
-  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">03 / 20</span></div>
+  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">03 / 21</span></div>
 </section>
 <!-- ============ 03 模型矩阵 ============ -->
 <section class="slide" id="slide-3" data-wm-date="2026-08-31">
@@ -944,7 +967,7 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
     <a data-t href="https://docs.z.ai/guides/overview/overview">docs.z.ai 模型總覽</a>
     <a data-e href="https://docs.z.ai/guides/overview/overview">docs.z.ai/models</a>
   </div>
-  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">04 / 20</span></div>
+  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">04 / 21</span></div>
 </section>
 
 <!-- ============ 04 GLM-5.3-Flash 能力总览（新增） ============ -->
@@ -989,7 +1012,7 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
       <p class="price-note" data-e>* Benchmark charts: Zhipu official release materials (Jul 2026)</p>
     </div>
   </div>
-  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">05 / 20</span></div>
+  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">05 / 21</span></div>
 </section>
 
 <!-- ============ 04b GLM-5.3-Flash 能力总览（新增） ============ -->
@@ -1034,7 +1057,7 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
       </p>
     </div>
   </div>
-  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">06 / 20</span></div>
+  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">06 / 21</span></div>
 </section>
 
 <!-- ============ 04c GLM-5.3-Flash 极致低成本架构（新增） ============ -->
@@ -1079,7 +1102,7 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
       </p>
     </div>
   </div>
-  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">07 / 20</span></div>
+  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">07 / 21</span></div>
 </section>
 
 <!-- ============ 04d GLM-5.3-Flash 国产芯片（新增） ============ -->
@@ -1127,7 +1150,7 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
         <span data-e>vs. the same hardware's initial baseline — hardware efficiency and per-token cost on par with mainstream NVIDIA GPUs</span></span></li>
     </ul>
   </div>
-  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">08 / 20</span></div>
+  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">08 / 21</span></div>
 </section>
 
 <!-- ============ 04e GLM-5.3-Flash 场景实践（新增） ============ -->
@@ -1184,7 +1207,7 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
       <div class="img fit"><img src="assets/flash_computer_use.png" alt="Computer Use demo"></div>
     </div>
   </div>
-  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">09 / 20</span></div>
+  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">09 / 21</span></div>
 </section>
 
 <!-- ============ 06 API 定价 ============ -->
@@ -1276,7 +1299,7 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
       <div class="d" style="margin-top:.4vw" data-e>Standard Chat Completions endpoint compatible with mainstream SDKs; docs cover model list, auth, streaming and error codes — your first call within minutes.</div>
     </div>
   </div>
-  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">10 / 20</span></div>
+  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">10 / 21</span></div>
 </section>
 
 <!-- ============ 07 性价比图 ============ -->
@@ -1297,7 +1320,7 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
   <div class="bench-wrap">
     <div class="bench-img"><img src="assets/aa_value.png" alt="Artificial Analysis intelligence vs cost"></div>
   </div>
-  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">11 / 20</span></div>
+  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">11 / 21</span></div>
 </section>
 
 <!-- ============ 04f 个人版 Coding Plan ============ -->
@@ -1392,7 +1415,7 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
       </div>
     </div>
   </div>
-  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">12 / 20</span></div>
+  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">12 / 21</span></div>
 </section>
 <!-- ============ 07 Coding Plan 合并页 ============ -->
 <section class="slide" id="slide-8" data-wm-date="2026-08-31">
@@ -1488,7 +1511,7 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
       </p>
     </div>
   </div>
-  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">13 / 20</span></div>
+  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">13 / 21</span></div>
 </section>
 
 <!-- ============ 11 为什么官方 API ============ -->
@@ -1552,7 +1575,7 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
       <div class="wi" data-e><b>Entitlement &amp; billing risks:</b> some third-party "open-source APIs" throttle, strip features (caching, structured output), bill opaquely or halt service without notice — unfit for production</div>
     </div>
   </div>
-  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">14 / 20</span></div>
+  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">14 / 21</span></div>
 </section>
 
 <!-- ============ 11 PART 02 分隔页 ============ -->
@@ -1591,7 +1614,7 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
       </ul>
     </aside>
   </div>
-  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">15 / 20</span></div>
+  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">15 / 21</span></div>
 </section>
 
 <!-- ============ 16 ZCode 产品 ============ -->
@@ -1656,7 +1679,7 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
       </a>
     </div>
   </div>
-  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">16 / 20</span></div>
+  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">16 / 21</span></div>
 </section>
 
 <!-- ============ 13 ZCode 治理与交付 ============ -->
@@ -1709,7 +1732,7 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
       </div>
     </div>
   </div>
-  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">17 / 20</span></div>
+  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">17 / 21</span></div>
 </section>
 
 <!-- ============ 14 万卷平台 ============ -->
@@ -1755,7 +1778,7 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
       <div class="img"><img src="assets/wanjuan_ui.jpeg" alt="Wanjuan AI application hub UI"></div>
     </div>
   </div>
-  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">18 / 20</span></div>
+  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">18 / 21</span></div>
 </section>
 
 <!-- ============ 15 万卷场景与价值 ============ -->
@@ -1804,7 +1827,7 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
       </div>
     </div>
   </div>
-  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">19 / 20</span></div>
+  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">19 / 21</span></div>
 </section>
 
 <!-- ============ 13 结尾联系 ============ -->
@@ -1841,7 +1864,58 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
       </div>
     </div>
   </div>
-  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">20 / 20</span></div>
+  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">20 / 21</span></div>
+</section>
+
+<!-- ============ 16 合规免责声明 ============ -->
+<section class="slide" id="slide-16" data-wm-date="2026-09-02">
+  <div class="legal-kick">
+    <span data-c>重要声明 · DISCLAIMER</span><span data-t>重要聲明 · DISCLAIMER</span><span data-e>IMPORTANT NOTICE · DISCLAIMER</span>
+  </div>
+  <h2 class="slide-title" style="font-size:1.55vw">
+    <span data-c>合规免责声明</span>
+    <span data-t>合規免責聲明</span>
+    <span data-e>Compliance &amp; Disclaimer Notice</span>
+  </h2>
+  <div class="legal-doc">
+    <p class="lg-p">
+      <span class="lh" data-c>一、文件性质与信息用途</span><span class="lh" data-t>一、文件性質與信息用途</span><span class="lh" data-e>1. Nature &amp; Purpose</span>
+      <span data-c>本文件由智谱（以下简称"公司"）<b>员工</b>编制，<b>仅供一般参考之用</b>。本文件所载全部内容（包括但不限于产品介绍、技术参数、性能指标、定价信息、案例数据及图表，无论明示或暗示）均<b>不构成任何形式的要约、要约邀请、投资建议、投资推介、承诺、保证或合同条款</b>，亦不得被解释为公司就任何事项作出的任何法律、商业、财务或税务意见。任何人士不得依赖本文件内容作出投资、采购或其他商业决策；如有依赖，风险自负。</span>
+      <span data-t>本文件由智譜（以下簡稱「公司」）<b>員工</b>編製，<b>僅供一般參考之用</b>。本文件所載全部內容（包括但不限於產品介紹、技術參數、性能指標、定價信息、案例數據及圖表，無論明示或暗示）均<b>不構成任何形式的要約、要約邀請、投資建議、投資推介、承諾、保證或合同條款</b>，亦不得被解釋為公司就任何事項作出的任何法律、商業、財務或稅務意見。任何人士不得依賴本文件內容作出投資、採購或其他商業決策；如有依賴，風險自負。</span>
+      <span data-e>This document is prepared by an <b>employee</b> of Zhipu (the "Company") <b>for general reference only</b>. Nothing herein (including, without limitation, product descriptions, technical parameters, performance metrics, pricing, case data and charts, whether express or implied) <b>constitutes an offer, invitation to offer, investment advice, investment promotion, commitment, warranty or contractual term of any kind</b>, nor shall it be construed as legal, commercial, financial or tax advice from the Company on any matter. No person may rely on this document in making any investment, procurement or other commercial decision; any such reliance is at that person's own risk.</span>
+    </p>
+    <p class="lg-p">
+      <span class="lh" data-c>二、以官方文件为准</span><span class="lh" data-t>二、以官方文件為準</span><span class="lh" data-e>2. Precedence of Official Documents</span>
+      <span data-c>如本文件所载内容与公司正式发布的任何官方文件（包括但不限于港交所披露易公告、定期报告、官方技术文档、刊例价目表及正式合同文本）存在任何差异或不一致，<b>一律以公司官方文件为准</b>。本文件不构成对官方文件的替代、修订或补充。</span>
+      <span data-t>如本文件所載內容與公司正式發布的任何官方文件（包括但不限於港交所披露易公告、定期報告、官方技術文檔、刊例價目表及正式合同文本）存在任何差異或不一致，<b>一律以公司官方文件為準</b>。本文件不構成對官方文件的替代、修訂或補充。</span>
+      <span data-e>In the event of any discrepancy between this document and any officially released document of the Company (including, without limitation, HKEX disclosure filings, periodic reports, official technical documentation, published price lists and formal contracts), <b>the official documents shall prevail in all respects</b>. This document is not a substitute for, or amendment or supplement to, any official document.</span>
+    </p>
+    <p class="lg-p">
+      <span class="lh" data-c>三、适用法域特别声明</span><span class="lh" data-t>三、適用法域特別聲明</span><span class="lh" data-e>3. Jurisdiction-Specific Statements</span>
+      <span data-c><b>中国内地：</b>本文件并非《证券法》《上市公司信息披露管理办法》项下定义的招募说明书、募集文件或信息披露文件，不构成《广告法》意义上的医疗、药品、医疗器械、保健食品、特殊医学用途配方食品广告，亦不属于证券投资咨询业务活动。产品与服务的提供以双方签署的正式合同为准。<b>中国香港特别行政区：</b>本文件并非《公司（清盘及杂项条文）条例》或《证券及期货条例》所界定的招股章程、发售文件或受规管广告，亦不构成《证券及期货条例》项下受规管活动的要约或邀请。<b>中国澳门特别行政区：</b>本文件并非根据澳门特别行政区法律须经事先审批或许可的金融产品宣传品，亦不构成第16/2022号法律《信托法》或金融体系法律制度项下的金融产品推介。</span>
+      <span data-t><b>中國內地：</b>本文件並非《證券法》《上市公司信息披露管理辦法》項下定義的招募說明書、募集文件或信息披露文件，不構成《廣告法》意義上的醫療、藥品、醫療器械、保健食品、特殊醫學用途配方食品廣告，亦不屬於證券投資諮詢業務活動。產品與服務的提供以雙方簽署的正式合同為準。<b>中國香港特別行政區：</b>本文件並非《公司（清盤及雜項條文）條例》或《證券及期貨條例》所界定的招股章程、發售文件或受規管廣告，亦不構成《證券及期貨條例》項下受規管活動的要約或邀請。<b>中國澳門特別行政區：</b>本文件並非根據澳門特別行政區法律鬚經事先審批或許可的金融產品宣傳品，亦不構成第16/2022號法律《信託法》或金融體系法律制度項下的金融產品推介。</span>
+      <span data-e><b>Mainland China:</b> This document is not a prospectus, offering document or disclosure document as defined under the PRC Securities Law or the Administrative Measures on Information Disclosure of Listed Companies, does not constitute regulated advertising under the PRC Advertising Law, and does not constitute securities-investment-consultancy activity. Products and services are governed exclusively by formally executed contracts. <b>Hong Kong SAR, China:</b> This document is not a prospectus, offering document or regulated advertisement as defined under the Companies (Winding Up and Miscellaneous Provisions) Ordinance or the Securities and Futures Ordinance, nor an offer or invitation for regulated activities thereunder. <b>Macao SAR, China:</b> This document is not a financial-product promotional material requiring prior approval under Macao SAR law, nor a financial-product recommendation under Law No. 16/2022 (Trust Law) or the Financial System Act.</span>
+    </p>
+    <p class="lg-p">
+      <span class="lh" data-c>四、版权与知识产权</span><span class="lh" data-t>四、版權與知識產權</span><span class="lh" data-e>4. Copyright &amp; IP</span>
+      <span data-c>本文件的全部内容（包括文字、图表、版式设计及所含商标与标识）的知识产权均归公司或其权利人所有。未经公司事先书面许可，任何单位或个人不得以任何方式复制、转载、摘编、传播或用于商业用途。第三方数据与商标归属其各自权利人，引用仅用于说明目的。</span>
+      <span data-t>本文件的全部內容（包括文字、圖表、版式設計及所含商標與標識）的知識產權均歸公司或其權利人所有。未經公司事先書面許可，任何單位或個人不得以任何方式複製、轉載、摘編、傳播或用於商業用途。第三方數據與商標歸屬其各自權利人，引用僅用於說明目的。</span>
+      <span data-e>All intellectual property rights in this document (including text, charts, layout, trademarks and logos) are vested in the Company or its licensors. No reproduction, adaptation, dissemination or commercial use is permitted without prior written consent. Third-party data and trademarks belong to their respective owners and are cited for illustrative purposes only.</span>
+    </p>
+    <p class="lg-p">
+      <span class="lh" data-c>五、责任限制</span><span class="lh" data-t>五、責任限制</span><span class="lh" data-e>5. Limitation of Liability</span>
+      <span data-c>在适用法律允许的最大范围内，公司对本文件所载内容因任何原因（包括但不限于疏忽）引起的任何直接、间接、附带、特殊、惩罚性或后果性损失（包括利润损失、业务中断或数据丢失）<b>不承担任何责任</b>。本文件不创设任何明示或默示的保证，包括适销性、特定用途适用性及不侵权的保证。</span>
+      <span data-t>在適用法律允許的最大範圍內，公司對本文件所載內容因任何原因（包括但不限於疏忽）引起的任何直接、間接、附帶、特殊、懲罰性或後果性損失（包括利潤損失、業務中斷或數據丟失）<b>不承擔任何責任</b>。本文件不創設任何明示或默示的保證，包括適銷性、特定用途適用性及不侵權的保證。</span>
+      <span data-e>To the maximum extent permitted by applicable law, the Company <b>shall not be liable</b> for any direct, indirect, incidental, special, punitive or consequential loss (including loss of profit, business interruption or data loss) arising from the contents hereof from any cause (including negligence). This document creates no warranty, express or implied, including merchantability, fitness for a particular purpose or non-infringement.</span>
+    </p>
+    <p class="lg-p">
+      <span class="lh" data-c>六、信息时效性与最终解释</span><span class="lh" data-t>六、信息時效性與最終解釋</span><span class="lh" data-e>6. Currency of Information</span>
+      <span data-c>本文件所载信息仅反映编制时点的情况，产品规格、性能数据、定价及服务条款可能随时调整而恕不另行通知；部分数据（如第三方评测结果）存在取数时效，以对应出处披露为准。公司保留对本声明及文件内容的最终解释权。本声明的解释、效力及争议解决均适用中华人民共和国法律。</span>
+      <span data-t>本文件所載信息僅反映編製時點的情況，產品規格、性能數據、定價及服務條款可能隨時調整而恕不另行通知；部分數據（如第三方評測結果）存在取數時效，以對應出處披露為準。公司保留對本聲明及文件內容的最終解釋權。本聲明的解釋、效力及爭議解決均適用中華人民共和國法律。</span>
+      <span data-e>Information herein reflects the position as at the date of preparation only; product specifications, performance data, pricing and service terms may change at any time without notice. Certain data (e.g. third-party evaluations) are time-sensitive and subject to their original disclosures. The Company reserves the right of final interpretation. This notice is governed by the laws of the People's Republic of China.</span>
+    </p>
+  </div>
+  <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">21 / 21</span></div>
 </section>
 
 <script>
