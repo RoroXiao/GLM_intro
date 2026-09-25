@@ -902,22 +902,31 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
       <div class="ctx">CONTEXT 1M</div>
     </div>
     <div class="mcard">
-      <div class="cat" data-c>Agent 场景模型</div><div class="cat" data-t>Agent 場景模型</div><div class="cat" data-e>Agent Model</div>
-      <div class="nm"><span data-c>GLM-5-Turbo</span><span data-t>GLM-5.3-FlashX</span><span data-e>GLM-5.3-FlashX</span></div>
-      <div class="role" data-c>旗舰 Agent 模型</div><div class="role" data-t>高速多模態檔（國際站）</div><div class="role" data-e>High-speed Flash tier (z.ai)</div>
-      <div class="ft" data-c>高性价比，支持思考模式切换，适合高吞吐场景</div>
-      <div class="ft" data-t>約 200 tokens/s 極速生成，1M 上下文原生多模態，docs.z.ai 在售</div>
-      <div class="ft" data-e>~200 tokens/s generation, 1M context, native multimodal — available on docs.z.ai</div>
-      <div class="ctx"><span data-c>CONTEXT 200K</span><span data-t>CONTEXT 1M</span><span data-e>CONTEXT 1M</span></div>
+      <div class="cat" data-c>高速多模态模型</div><div class="cat" data-t>高速多模態模型</div><div class="cat" data-e>High-speed Multimodal</div>
+      <div class="nm">GLM-5.3-FlashX</div>
+      <div class="role" data-c>极速生成档 · 新发布</div><div class="role" data-t>極速生成檔 · 新發布</div><div class="role" data-e>Fastest tier · newly released</div>
+      <div class="ft" data-c>约 200 tokens/s 极速生成，能力与 Flash 同档，1M 上下文原生多模态，适合高并发低时延生产场景</div>
+      <div class="ft" data-t>約 200 tokens/s 極速生成，能力與 Flash 同檔，1M 上下文原生多模態，適合高併發低時延生產場景</div>
+      <div class="ft" data-e>~200 tokens/s generation at Flash-tier capability, 1M-context native multimodal — built for high-concurrency, low-latency production</div>
+      <div class="ctx">CONTEXT 1M</div>
+    </div>
+    <div class="mcard">
+      <div class="cat" data-c>旗舰语言模型 · 稳定版</div><div class="cat" data-t>旗艦語言模型 · 穩定版</div><div class="cat" data-e>Proven Flagship LLM</div>
+      <div class="nm">GLM-5.2</div>
+      <div class="role" data-c>上一代旗舰 · 生产主力</div><div class="role" data-t>上一代旗艦 · 生產主力</div><div class="role" data-e>Prior flagship · production workhorse</div>
+      <div class="ft" data-c>1M 上下文扎实落地，长程任务与大型工程的中坚型号；与 GLM-5.3 同价，平滑兜底高负载</div>
+      <div class="ft" data-t>1M 上下文紮實落地，長程任務與大型工程的中堅型號；與 GLM-5.3 同價，平滑兜底高負載</div>
+      <div class="ft" data-e>Solid 1M context — the workhorse for long-horizon tasks and large engineering; priced same as GLM-5.3</div>
+      <div class="ctx">CONTEXT 1M</div>
     </div>
     <div class="mcard">
       <div class="cat" data-c>多模态理解模型</div><div class="cat" data-t>多模態理解模型</div><div class="cat" data-e>Vision Model</div>
-      <div class="nm"><span data-c>GLM-5V-Turbo</span><span data-t>GLM-4.6V</span><span data-e>GLM-4.6V</span></div>
-      <div class="role" data-c>原生多模态 Coding 基座</div><div class="role" data-t>視覺理解模型（國際站）</div><div class="role" data-e>Vision model on z.ai</div>
+      <div class="nm">GLM-5V-Turbo</div>
+      <div class="role" data-c>原生多模态 Coding 基座</div><div class="role" data-t>原生多模態 Coding 基座</div><div class="role" data-e>Native multimodal coding base</div>
       <div class="ft" data-c>看懂设计稿/截图/网页，生成可运行代码</div>
-      <div class="ft" data-t>圖像 / 視頻 / 文檔理解與 GUI 定位，$0.30 / 百萬輸入 tokens</div>
-      <div class="ft" data-e>Image / video / document understanding and GUI grounding — $0.30 per 1M input tokens</div>
-      <div class="ctx"><span data-c>CONTEXT 200K</span><span data-t>DOCS.Z.AI</span><span data-e>DOCS.Z.AI</span></div>
+      <div class="ft" data-t>看懂設計稿/截圖/網頁，生成可運行代碼</div>
+      <div class="ft" data-e>Reads designs, screenshots and webpages into runnable code</div>
+      <div class="ctx">CONTEXT 200K</div>
     </div>
     <div class="mcard">
       <div class="cat" data-c>语音 / 视频</div><div class="cat" data-t>語音 / 視頻</div><div class="cat" data-e>Voice / Video</div>
@@ -928,15 +937,30 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
       <div class="ft" data-e>End-to-end realtime voice/video interaction</div>
       <div class="ctx" data-c>端到端</div><div class="ctx" data-t>端到端</div><div class="ctx" data-e>E2E</div>
     </div>
-    <div class="mcard">
-      <div class="cat" data-c>语音</div><div class="cat" data-t>語音</div><div class="cat" data-e>Voice</div>
-      <div class="nm">GLM-4-Voice</div>
-      <div class="role" data-c>端到端情感语音</div><div class="role" data-t>端到端情感語音</div><div class="role" data-e>Emotional speech, E2E</div>
-      <div class="ft" data-c>支持情感表达的语音交互</div>
-      <div class="ft" data-t>支援情感表達的語音交互</div>
-      <div class="ft" data-e>Voice interaction with emotional expression</div>
-      <div class="ctx" data-c>端到端</div><div class="ctx" data-t>端到端</div><div class="ctx" data-e>E2E</div>
-    </div>
+  </div>
+  <div class="official-links" style="margin-top:.8vw;padding-top:.7vw">
+    <span class="lk-k" data-c>模型介绍直达：</span><span class="lk-k" data-t>模型介紹直達：</span><span class="lk-k" data-e>Model pages:</span>
+    <a data-c href="https://docs.bigmodel.cn/cn/guide/models/text/glm-5.3">GLM-5.3</a>
+    <a data-t href="https://docs.z.ai/guides/llm/glm-5.3">GLM-5.3</a>
+    <a data-e href="https://docs.z.ai/guides/llm/glm-5.3">GLM-5.3</a>
+    <a data-c href="https://docs.bigmodel.cn/cn/guide/models/vlm/glm-5.3-flash">GLM-5.3-Flash</a>
+    <a data-t href="https://docs.z.ai/guides/vlm/glm-5.3-flash">GLM-5.3-Flash</a>
+    <a data-e href="https://docs.z.ai/guides/vlm/glm-5.3-flash">GLM-5.3-Flash</a>
+    <a data-c href="https://docs.bigmodel.cn/cn/guide/models/vlm/glm-5.3-flash">GLM-5.3-FlashX</a>
+    <a data-t href="https://docs.z.ai/guides/vlm/glm-5.3-flash">GLM-5.3-FlashX</a>
+    <a data-e href="https://docs.z.ai/guides/vlm/glm-5.3-flash">GLM-5.3-FlashX</a>
+    <a data-c href="https://docs.bigmodel.cn/cn/guide/models/text/glm-5.2">GLM-5.2</a>
+    <a data-t href="https://docs.z.ai/guides/llm/glm-5.2">GLM-5.2</a>
+    <a data-e href="https://docs.z.ai/guides/llm/glm-5.2">GLM-5.2</a>
+    <a data-c href="https://docs.bigmodel.cn/cn/guide/models/vlm/glm-5v-turbo">GLM-5V-Turbo</a>
+    <a data-t href="https://docs.z.ai/guides/vlm/glm-5v-turbo">GLM-5V-Turbo</a>
+    <a data-e href="https://docs.z.ai/guides/vlm/glm-5v-turbo">GLM-5V-Turbo</a>
+    <a data-c href="https://docs.bigmodel.cn/cn/guide/models/sound-and-video/glm-realtime">GLM-Realtime</a>
+    <a data-t href="https://docs.z.ai/guides/overview/overview">GLM-Realtime · 總覽</a>
+    <a data-e href="https://docs.z.ai/guides/overview/overview">GLM-Realtime · overview</a>
+    <a data-c href="https://docs.bigmodel.cn/cn/guide/start/model-overview">模型总览（免登录）</a>
+    <a data-t href="https://docs.z.ai/guides/overview/overview">全部模型總覽</a>
+    <a data-e href="https://docs.z.ai/guides/overview/overview">All models</a>
   </div>
   <div class="adv-strip">
     <div class="adv-k" data-c>GLM 家族竞争优势</div><div class="adv-k" data-t>GLM 家族競爭優勢</div><div class="adv-k" data-e>GLM Family Advantages</div>
@@ -960,12 +984,6 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
         <div class="ad" data-e>Code review &amp; vulnerability discovery on par with the industry's best — defense capabilities released open-source</div>
       </div>
     </div>
-  </div>
-  <div class="official-links">
-    <span class="lk-k" data-c>官网模型中心：</span><span class="lk-k" data-t>官網模型中心：</span><span class="lk-k" data-e>Official model hub:</span>
-    <a data-c href="https://bigmodel.cn/console/modelcenter/square">bigmodel.cn 模型广场</a>
-    <a data-t href="https://docs.z.ai/guides/overview/overview">docs.z.ai 模型總覽</a>
-    <a data-e href="https://docs.z.ai/guides/overview/overview">docs.z.ai/models</a>
   </div>
   <div class="slide-foot"><span class="brand">ZHIPU AI · GLM</span><span class="slide-num">04 / 21</span></div>
 </section>
@@ -1243,7 +1261,7 @@ table.dt .dim{color:var(--muted);font-size:.8vw;display:block;margin-top:.15vw;}
     <div class="official-links">
       <span class="lk-k">直达链接</span>
       <a data-c href="https://bigmodel.cn/pricing">bigmodel.cn/pricing — 官方定价页</a>
-      <a data-c href="https://bigmodel.cn/console/modelcenter/square">bigmodel.cn 模型广场 — GLM-5.3 模型页</a>
+      <a data-c href="https://docs.bigmodel.cn/cn/guide/models/text/glm-5.3">docs.bigmodel.cn — GLM-5.3 模型页</a>
     </div>
   </div>
 
